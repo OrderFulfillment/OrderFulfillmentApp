@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="homePGPageDef"
+                Package="ofa.home.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SoRctCountService" id="SoRctCountServiceIterator"/>
+    <accessorIterator MasterBinding="SoRctCountServiceIterator" Binds="soCount" RangeSize="-1"
+                      DataControl="SoRctCountService" BeanClass="ofa.mobile.pojo.SoRctCount" id="soCountIterator"/>
+    <accessorIterator MasterBinding="SoRctCountServiceIterator" Binds="rcptCount" RangeSize="-1"
+                      DataControl="SoRctCountService" BeanClass="ofa.mobile.pojo.SoRctCount" id="rcptCountIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="soCountIterator" id="soCount">
+      <nodeDefinition DefName="ofa.mobile.pojo.SoRctCount" Name="soCount0">
+        <AttrNames>
+          <Item Value="countValue"/>
+          <Item Value="countName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="rcptCountIterator" id="rcptCount">
+      <nodeDefinition DefName="ofa.mobile.pojo.SoRctCount" Name="rcptCount0">
+        <AttrNames>
+          <Item Value="countValue"/>
+          <Item Value="countName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="homeTf">
+    <default-activity>homePG</default-activity>
+    <view id="homePG">
+      <page>/ofa.home.page/homePG.amx</page>
+    </view>
+    <view id="ordersByException">
+      <page>/ofa.home.page/ordersByException.amx</page>
+    </view>
+    <view id="receiptsByException">
+      <page>/ofa.home.page/receiptsByException.amx</page>
+    </view>
+    <view id="purchaseOrders">
+      <page>/ofa.home.page/purchaseOrders.amx</page>
+    </view>
+    <view id="salesOrders">
+      <page>/ofa.home.page/salesOrders.amx</page>
+    </view>
+    <view id="purchaseOrdersLines">
+      <page>/ofa.home.page/purchaseOrdersLines.amx</page>
+    </view>
+    <view id="salesOrdersLines">
+      <page>/ofa.home.page/salesOrdersLines.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>homePG</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>receipts</from-outcome>
+        <to-activity-id>receiptsByException</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>orders</from-outcome>
+        <to-activity-id>ordersByException</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>receiptsByException</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>poHeaders</from-outcome>
+        <to-activity-id>purchaseOrders</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>ordersByException</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>salesOrders</from-outcome>
+        <to-activity-id>salesOrders</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>purchaseOrders</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>poLines</from-outcome>
+        <to-activity-id>purchaseOrdersLines</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>salesOrders</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>orderLines</from-outcome>
+        <to-activity-id>salesOrdersLines</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

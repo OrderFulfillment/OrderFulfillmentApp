@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="ordersByExceptionPageDef"
+                Package="ofa.home.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SoRctDetailsL2Service" id="SoRctDetailsL2ServiceIterator"/>
+    <accessorIterator MasterBinding="SoRctDetailsL2ServiceIterator" Binds="soDetailsCountL2" RangeSize="-1"
+                      DataControl="SoRctDetailsL2Service" BeanClass="ofa.mobile.pojo.SoRctDetailsL2"
+                      id="soDetailsCountL2Iterator"/>
+    <accessorIterator MasterBinding="SoRctDetailsL2ServiceIterator" Binds="soDetailsAgingL2" RangeSize="-1"
+                      DataControl="SoRctDetailsL2Service" BeanClass="ofa.mobile.pojo.SoRctDetailsL2"
+                      id="soDetailsAgingL2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="soDetailsCountL2Iterator" id="soDetailsCountL2">
+      <nodeDefinition DefName="ofa.mobile.pojo.SoRctDetailsL2" Name="soDetailsCountL20">
+        <AttrNames>
+          <Item Value="count"/>
+          <Item Value="customerName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="soDetailsAgingL2Iterator" id="soDetailsAgingL2">
+      <nodeDefinition DefName="ofa.mobile.pojo.SoRctDetailsL2" Name="soDetailsAgingL20">
+        <AttrNames>
+          <Item Value="count"/>
+          <Item Value="customerName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

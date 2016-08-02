@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.20" id="DataBindings"
+             SeparateXMLFiles="false" Package="ofa.mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/ofa.home.page/homePG.amx" usageId="ofa_mobile_homePGPageDef"/>
+    <page path="/ofa.home.page/ordersByException.amx" usageId="ofa_mobile_ordersByExceptionPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="ofa_mobile_homePGPageDef" path="ofa.home.page.homePGPageDef"/>
+    <page id="ofa_mobile_ordersByExceptionPageDef" path="ofa.home.page.ordersByExceptionPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="SoRctDetailsL2Service" path="ofa.mobile.SoRctDetailsL2Service"/>
+    <dc id="SoRctCountService" path="ofa.mobile.SoRctCountService"/>
+  </dataControlUsages>
+</Application>

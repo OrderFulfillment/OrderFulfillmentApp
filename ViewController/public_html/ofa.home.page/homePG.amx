@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Header" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1"/>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandButton id="cb2"/>
+        </amx:facet>
+        <amx:panelGroupLayout id="pgl1" layout="vertical" scrollPolicy="none" halign="center" valign="middle"
+                              inlineStyle="margin:10px;">
+            <amx:outputText value="Orders by Exception" id="ot3"/>
+            <dvtm:barChart var="row" value="#{bindings.soCount.collectionModel}" id="bc1">
+                <amx:facet name="dataStamp">
+                    <dvtm:chartDataItem group="#{row.countName}" value="#{row.countValue}"
+                                        series="#{bindings.soCount.hints.countValue.label}" id="cdi1" drilling="on"
+                                        action="orders">
+                        <amx:setPropertyListener id="spl1" from="#{row.countName}"
+                                                 to="#{pageFlowScope.orderOrRctStatus}"/>
+                        <amx:setPropertyListener id="spl2" to="#{pageFlowScope.soOrRct}" from="S"/>
+                    </dvtm:chartDataItem>
+                </amx:facet>
+                <dvtm:legend rendered="false" id="l1"/>
+            </dvtm:barChart>
+            <amx:outputText value="Receipts by Exception" id="ot2" inlineStyle="margin-top:20px;"/>
+            <dvtm:barChart var="row" value="#{bindings.rcptCount.collectionModel}" id="bc2">
+                <amx:facet name="dataStamp">
+                    <dvtm:chartDataItem group="#{row.countName}" value="#{row.countValue}"
+                                        series="#{bindings.rcptCount.hints.countValue.label}" id="cdi2" drilling="on"
+                                        action="receipts">
+                        <amx:setPropertyListener id="spl3" to="#{pageFlowScope.soOrRct}" from="R"/>
+                        <amx:setPropertyListener id="spl4" from="#{row.countName}"
+                                                 to="#{pageFlowScope.orderOrRctStatus}"/>
+                    </dvtm:chartDataItem>
+                </amx:facet>
+                <dvtm:legend rendered="false" id="l2"/>
+            </dvtm:barChart>
+        </amx:panelGroupLayout>
+    </amx:panelPage>
+</amx:view>

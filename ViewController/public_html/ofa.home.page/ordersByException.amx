@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Orders by Exception - #{pageFlowScope.orderStatus}" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1"/>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandButton id="cb2"/>
+        </amx:facet>
+        <amx:panelGroupLayout id="pgl1" layout="vertical" scrollPolicy="none" halign="center" valign="middle"
+                              inlineStyle="margin:10px;">
+            <amx:outputText value="Value by Customer" id="ot3"/>
+            <dvtm:barChart var="row" value="#{bindings.soDetailsCountL2.collectionModel}" id="bc1">
+                <amx:facet name="dataStamp">
+                    <dvtm:chartDataItem group="#{row.customerName}" value="#{row.count}"
+                                        series="#{bindings.soDetailsCountL2.hints.count.label}" id="cdi1"/>
+                </amx:facet>
+                <dvtm:legend rendered="false" id="l1"/>
+            </dvtm:barChart>
+            <amx:outputText value="Aging by Customer" id="ot2"/>
+            <dvtm:barChart var="row" value="#{bindings.soDetailsAgingL2.collectionModel}" id="bc2">
+                <amx:facet name="dataStamp">
+                    <dvtm:chartDataItem group="#{row.customerName}" value="#{row.count}"
+                                        series="#{bindings.soDetailsAgingL2.hints.count.label}" id="cdi2"/>
+                </amx:facet>
+                <dvtm:legend rendered="false" id="l2"/>
+            </dvtm:barChart>
+        </amx:panelGroupLayout>
+    </amx:panelPage>
+</amx:view>
