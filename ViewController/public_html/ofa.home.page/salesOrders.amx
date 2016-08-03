@@ -3,7 +3,7 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:outputText value="Header" id="ot1"/>
+      <amx:outputText value="#{pageFlowScope.customer}" id="ot1"/>
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton id="cb1"/>
@@ -11,5 +11,32 @@
     <amx:facet name="secondary">
       <amx:commandButton id="cb2"/>
     </amx:facet>
+    <amx:listView var="row" value="#{bindings.soHeaders.collectionModel}" fetchSize="#{bindings.soHeaders.rangeSize}"
+                  selectedRowKeys="#{bindings.soHeaders.collectionModel.selectedRow}"
+                  initialScrollRowKeys="#{bindings.soHeaders.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.soHeaders.collectionModel.makeCurrent}" showMoreStrategy="autoScroll"
+                  bufferStrategy="viewport" id="lv1" layout="cards">
+      <amx:listItem id="li1" action="orderLines">
+        <amx:tableLayout id="tl1">
+          <amx:rowLayout id="rl1">
+            <amx:cellFormat id="cf1">
+              <amx:outputText value="#{row.location}" id="ot2"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl2">
+            <amx:cellFormat id="cf2">
+              <amx:outputText value="#{row.documentNumber}" id="ot3"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl3">
+            <amx:cellFormat id="cf3">
+              <amx:outputText value="#{row.orderValue}" id="ot4"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:setPropertyListener id="spl1" from="#{row.documentNumber}" to="#{pageFlowScope.documentNumber}"/>
+        <amx:setPropertyListener id="spl2" from="#{row.docHeaderId}" to="#{pageFlowScope.orderId}"/>
+      </amx:listItem>
+    </amx:listView>
   </amx:panelPage>
 </amx:view>

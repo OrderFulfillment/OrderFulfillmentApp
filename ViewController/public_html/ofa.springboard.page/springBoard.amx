@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header"/>
+        <amx:tableLayout id="tl1" inlineStyle="margin:10px;">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf1" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh1" styleClass="fa fa-users fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf2" valign="middle">
+                    <amx:outputText value="Customers" id="ot1"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl2">
+                <amx:cellFormat id="cf3" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh2" styleClass="fa fa-gift fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf4">
+                    <amx:outputText value="Outbound Shipments" id="ot10"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl3">
+                <amx:cellFormat id="cf5" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh3" styleClass="fa fa-cart-arrow-down fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf6">
+                    <amx:outputText value="Inbound Shipments" id="ot9"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl4">
+                <amx:cellFormat id="cf7" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh4" styleClass="fa fa-bus fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf8">
+                    <amx:outputText value="Carriers" id="ot8"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl5">
+                <amx:cellFormat id="cf9" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh5" styleClass="fa fa-calendar fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf10">
+                    <amx:outputText value="Daily Tracker" id="ot7"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl6">
+                <amx:cellFormat id="cf11" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh6" styleClass="fa fa-bell fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf12">
+                    <amx:outputText value="My Alerts" id="ot6"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl7">
+                <amx:cellFormat id="cf13" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh7" styleClass="fa fa-gear fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf14">
+                    <amx:outputText value="Settings" id="ot5"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl8">
+                <amx:cellFormat id="cf15" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh8" styleClass="fa fa-search fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf16">
+                    <amx:outputText value="Search" id="ot4"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl9">
+                <amx:cellFormat id="cf17" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh9" styleClass="fa fa-user fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf18">
+                    <amx:outputText value="About Us" id="ot3"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl10">
+                <amx:cellFormat id="cf19" width="30px" valign="top" height="30px">
+                    <amx:outputHtml id="oh10" styleClass="fa fa-sign-out fa-lg"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf20">
+                    <amx:outputText value="Sign Out" id="ot2"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+    </amx:panelPage>
+</amx:view>

@@ -5,7 +5,7 @@
       <property
          name="x">91.5</property>
       <property
-         name="y">345.20117</property>
+         name="y">460.33527</property>
    </OverallProperties>
    <View
       id="View2">
@@ -18,7 +18,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>homePG&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">177.5</property>
+         name="y">292.63412</property>
       <property
          name="page">/ofa.home.page/homePG.amx</property>
       <property
@@ -33,7 +33,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>ordersByException&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">256.20117</property>
+         name="y">342.55176</property>
       <property
          name="page">/ofa.home.page/ordersByException.amx</property>
       <property
@@ -78,7 +78,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>salesOrders&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">256.20117</property>
+         name="y">277.78882</property>
       <property
          name="page">/ofa.home.page/salesOrders.amx</property>
       <property
@@ -108,7 +108,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>salesOrdersLines&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">256.20117</property>
+         name="y">277.78882</property>
       <property
          name="page">/ofa.home.page/salesOrdersLines.amx</property>
       <property
@@ -122,7 +122,7 @@
       <property
          name="fromOutcome">receipts</property>
       <property
-         name="sdm:polyPoints">R46,132.5,173.64941,236.36035,83.149414,L50</property>
+         name="sdm:polyPoints">T50,91.5,238.28354,277.36035,137.14941,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -132,7 +132,7 @@
       <property
          name="fromOutcome">orders</property>
       <property
-         name="sdm:polyPoints">R54,132.5,180.64941,236.36035,255.85059,L50</property>
+         name="sdm:polyPoints">R50,132.5,292.28354,236.36035,338.70117,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -152,7 +152,7 @@
       <property
          name="fromOutcome">salesOrders</property>
       <property
-         name="sdm:polyPoints">R50,318.36035,255.85059,413.74023,255.85059,L50</property>
+         name="sdm:polyPoints">R50,318.36035,342.20117,413.74023,277.43823,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -172,6 +172,39 @@
       <property
          name="fromOutcome">orderLines</property>
       <property
-         name="sdm:polyPoints">R50,495.74023,255.85059,594.12305,255.85059,L50</property>
+         name="sdm:polyPoints">R50,495.74023,277.43823,594.12305,277.43823,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="View3"
+      to="MethodCall16">
+      <property
+         name="fromOutcome">backToHome</property>
+      <property
+         name="sdm:polyPoints">L54,236.36035,345.70117,158.24023,411.43823,T56</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall16">
+      <property
+         name="activityId">resetData</property>
+      <property
+         name="x">154.74023</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>resetData&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">465.78882</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="MethodCall16"
+      to="View2">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">T44,151.24023,412.1394,91.5,346.28354,B50</property>
    </ControlFlowCase>
 </SDM>

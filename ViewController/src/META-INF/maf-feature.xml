@@ -5,4 +5,9 @@
       <adfmf:amx file="ofa.home/homeTf.xml#homeTf"/>
     </adfmf:content>
   </adfmf:feature>
+  <adfmf:feature id="ofa.springboard" name="springboard">
+    <adfmf:content id="ofa.springboard.1">
+      <adfmf:amx file="ofa.springboard.page/springBoard.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
 </adfmf:features>

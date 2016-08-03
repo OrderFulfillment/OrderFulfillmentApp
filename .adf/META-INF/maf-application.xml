@@ -3,8 +3,13 @@
                    version="1.0" name="OrderFulfillmentApp" id="com.company.OrderFulfillmentApp"
                    appControllerFolder="ApplicationController" listener-class="ofa.application.LifeCycleListenerImpl">
   <adfmf:featureReference refId="ofa.home" id="fr1" loginConnRefId="snet_ebs"/>
+  <adfmf:featureReference refId="ofa.springboard" id="fr2" showOnSpringboard="false" showOnNavigationBar="false"/>
   <adfmf:navigation>
     <adfmf:navigationBar enabled="false"/>
+    <adfmf:springboard enabled="true" showSpringboardAtStartup="false" displayGotoSpringboardControl="false"
+                       width="200">
+      <adfmf:springboardFeatureReference refId="ofa.springboard" id="sfr1"/>
+    </adfmf:springboard>
   </adfmf:navigation>
   <adfmf:login defaultConnRefId="snet_ebs">
     <adfmf:localHTML url="login.html"/>

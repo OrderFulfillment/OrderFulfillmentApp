@@ -12,4 +12,12 @@ public class RestURIs {
     public static String getSoRctDetailsL2URI(String status, String soOrRct, String countOrAging) {
         return "/L2/v1/getsorctl2/" + status + "/" + soOrRct + "/" + countOrAging;
     }
+
+    public static String getSoHeadersURI(String status, String customer, String soOrRct) {
+        return "/L3/v1/getsorctl3/" + status + "/" + customer + "/" + soOrRct;
+    }
+
+    public static String getSoLinesURI(String orderId, String soOrRct) {
+        return "/L4/v1/getsorctl4/" + orderId + "/" + soOrRct;
+    }
 }

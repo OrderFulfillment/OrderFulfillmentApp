@@ -2,6 +2,11 @@
 <adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
   <task-flow-definition id="homeTf">
     <default-activity>homePG</default-activity>
+    <managed-bean id="__13">
+      <managed-bean-name>ResetDataBean</managed-bean-name>
+      <managed-bean-class>ofa.mobile.bean.ResetDataBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <view id="homePG">
       <page>/ofa.home.page/homePG.amx</page>
     </view>
@@ -23,6 +28,12 @@
     <view id="salesOrdersLines">
       <page>/ofa.home.page/salesOrdersLines.amx</page>
     </view>
+    <method-call id="resetData">
+      <method>#{pageFlowScope.ResetDataBean.backToHomeFromSoExcp}</method>
+      <outcome>
+        <fixed-outcome>back</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>homePG</from-activity-id>
       <control-flow-case id="__2">
@@ -47,6 +58,10 @@
         <from-outcome>salesOrders</from-outcome>
         <to-activity-id>salesOrders</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome>backToHome</from-outcome>
+        <to-activity-id>resetData</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__8">
       <from-activity-id>purchaseOrders</from-activity-id>
@@ -60,6 +75,13 @@
       <control-flow-case id="__11">
         <from-outcome>orderLines</from-outcome>
         <to-activity-id>salesOrdersLines</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__16">
+      <from-activity-id>resetData</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>homePG</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <page-flow-scope-behavior>

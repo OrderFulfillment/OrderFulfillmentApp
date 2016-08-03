@@ -3,13 +3,17 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
     <amx:panelPage id="pp1">
         <amx:facet name="header">
-            <amx:outputText value="Header" id="ot1"/>
+            <amx:outputText value="#{securityContext.userName}" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton id="cb1"/>
+            <amx:commandLink id="cl1">
+                <amx:outputHtml id="oh1" styleClass="fa fa-bars fa-lg" inlineStyle="color:Black;"/>
+            </amx:commandLink>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandButton id="cb2"/>
+            <amx:commandLink id="cl2">
+                <amx:outputHtml id="oh2" styleClass="fa fa-search fa-lg"/>
+            </amx:commandLink>
         </amx:facet>
         <amx:panelGroupLayout id="pgl1" layout="vertical" scrollPolicy="none" halign="center" valign="middle"
                               inlineStyle="margin:10px;">

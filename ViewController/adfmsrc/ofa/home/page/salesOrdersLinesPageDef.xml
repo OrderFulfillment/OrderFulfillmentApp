@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="salesOrdersLinesPageDef"
+                Package="ofa.home.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SoLinesService" id="SoLinesServiceIterator"/>
+    <accessorIterator MasterBinding="SoLinesServiceIterator" Binds="soLines" RangeSize="25" DataControl="SoLinesService"
+                      BeanClass="ofa.mobile.pojo.SoLines" id="soLinesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="soLinesIterator" id="soLines">
+      <nodeDefinition DefName="ofa.mobile.pojo.SoLines" Name="soLines0">
+        <AttrNames>
+          <Item Value="docHeaderId"/>
+          <Item Value="carrier"/>
+          <Item Value="docLineId"/>
+          <Item Value="docLineNum"/>
+          <Item Value="itemNumber"/>
+          <Item Value="quantity"/>
+          <Item Value="ssd"/>
+          <Item Value="warehouse"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

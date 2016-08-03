@@ -3,7 +3,7 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:outputText value="Header" id="ot1"/>
+      <amx:outputText value="#{pageFlowScope.documentNumber}" id="ot1"/>
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton id="cb1"/>
@@ -11,5 +11,40 @@
     <amx:facet name="secondary">
       <amx:commandButton id="cb2"/>
     </amx:facet>
+    <amx:listView var="row" value="#{bindings.soLines.collectionModel}" fetchSize="#{bindings.soLines.rangeSize}"
+                  selectedRowKeys="#{bindings.soLines.collectionModel.selectedRow}"
+                  initialScrollRowKeys="#{bindings.soLines.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.soLines.collectionModel.makeCurrent}" showMoreStrategy="autoScroll"
+                  bufferStrategy="viewport" id="lv1">
+      <amx:listItem id="li1">
+        <amx:tableLayout id="tl1">
+          <amx:rowLayout id="rl1">
+            <amx:cellFormat id="cf1">
+              <amx:outputText value="#{row.docLineNum}" id="ot2"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl2">
+            <amx:cellFormat id="cf2">
+              <amx:outputText value="#{row.itemNumber}" id="ot3"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl3">
+            <amx:cellFormat id="cf3">
+              <amx:outputText value="#{row.ssd}" id="ot4"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl4">
+            <amx:cellFormat id="cf4">
+              <amx:outputText value="#{row.quantity}" id="ot5"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl5">
+            <amx:cellFormat id="cf5">
+              <amx:outputText value="#{row.warehouse}" id="ot6"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+      </amx:listItem>
+    </amx:listView>
   </amx:panelPage>
 </amx:view>

@@ -8,12 +8,20 @@
   <pageMap>
     <page path="/ofa.home.page/homePG.amx" usageId="ofa_mobile_homePGPageDef"/>
     <page path="/ofa.home.page/ordersByException.amx" usageId="ofa_mobile_ordersByExceptionPageDef"/>
+    <page path="/ofa.home.page/salesOrders.amx" usageId="ofa_mobile_salesOrdersPageDef"/>
+    <page path="/ofa.home.page/salesOrdersLines.amx" usageId="ofa_mobile_salesOrdersLinesPageDef"/>
+    <page path="/ofa.home.page/receiptsByException.amx" usageId="ofa_mobile_receiptsByExceptionPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="ofa_mobile_homePGPageDef" path="ofa.home.page.homePGPageDef"/>
     <page id="ofa_mobile_ordersByExceptionPageDef" path="ofa.home.page.ordersByExceptionPageDef"/>
+    <page id="ofa_mobile_salesOrdersPageDef" path="ofa.home.page.salesOrdersPageDef"/>
+    <page id="ofa_mobile_salesOrdersLinesPageDef" path="ofa.home.page.salesOrdersLinesPageDef"/>
+    <page id="ofa_mobile_receiptsByExceptionPageDef" path="ofa.home.page.receiptsByExceptionPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="SoLinesService" path="ofa.mobile.SoLinesService"/>
+    <dc id="SoHeadersService" path="ofa.mobile.SoHeadersService"/>
     <dc id="SoRctDetailsL2Service" path="ofa.mobile.SoRctDetailsL2Service"/>
     <dc id="SoRctCountService" path="ofa.mobile.SoRctCountService"/>
   </dataControlUsages>

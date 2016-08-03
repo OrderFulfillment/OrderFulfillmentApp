@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import ofa.mobile.constants.OfaConstants;
 import ofa.mobile.pojo.SoRctCount;
 import ofa.mobile.pojo.SoRctDetailsL2;
 import ofa.mobile.rest.RestURIs;
@@ -20,6 +21,12 @@ public class SoRctDetailsL2Service {
     public SoRctDetailsL2Service() {
         super();
         invokeService();
+    }
+
+    Boolean isBackButton() {
+        if (AdfmfJavaUtilities.getELValue("#{pageFlowScope.backFrom}") == OfaConstants.BACK_FROM_ORDERS_EXCEPTION)
+            return true;
+        return false;
     }
 
     private void invokeService() {
@@ -39,7 +46,6 @@ public class SoRctDetailsL2Service {
                 status = "J";
                 break;
             }
-
             String soOrRct = AdfmfJavaUtilities.getELValue("#{pageFlowScope.soOrRct}").toString();
             String countOrAging = AdfmfJavaUtilities.getELValue("C").toString();
             String jsonArrayAsString =
@@ -67,7 +73,7 @@ public class SoRctDetailsL2Service {
     public SoRctDetailsL2[] getRctDetailsCountL2() {
         SoRctDetailsL2[] rctDetailsArray = null;
         try {
-            if (soRctDetailsL2List.isEmpty()) {
+            if (soRctDetailsL2List.isEmpty() || isBackButton()) {
                 invokeService();
             }
             Iterator<SoRctDetailsL2> itr = soRctDetailsL2List.iterator();
@@ -88,7 +94,7 @@ public class SoRctDetailsL2Service {
     public SoRctDetailsL2[] getRctDetailsAgingL2() {
         SoRctDetailsL2[] rctDetailsArray = null;
         try {
-            if (soRctDetailsL2List.isEmpty()) {
+            if (soRctDetailsL2List.isEmpty() || isBackButton()) {
                 invokeService();
             }
             Iterator<SoRctDetailsL2> itr = soRctDetailsL2List.iterator();
@@ -108,7 +114,7 @@ public class SoRctDetailsL2Service {
     public SoRctDetailsL2[] getSoDetailsAgingL2() {
         SoRctDetailsL2[] soDetailsArray = null;
         try {
-            if (soRctDetailsL2List.isEmpty()) {
+            if (soRctDetailsL2List.isEmpty() || isBackButton()) {
                 invokeService();
             }
             Iterator<SoRctDetailsL2> itr = soRctDetailsL2List.iterator();
@@ -128,7 +134,7 @@ public class SoRctDetailsL2Service {
     public SoRctDetailsL2[] getSoDetailsCountL2() {
         SoRctDetailsL2[] soDetailsArray = null;
         try {
-            if (soRctDetailsL2List.isEmpty()) {
+            if (soRctDetailsL2List.isEmpty() || isBackButton()) {
                 invokeService();
             }
             Iterator<SoRctDetailsL2> itr = soRctDetailsL2List.iterator();

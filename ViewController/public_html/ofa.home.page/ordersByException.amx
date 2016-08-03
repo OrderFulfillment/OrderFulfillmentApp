@@ -3,7 +3,7 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
     <amx:panelPage id="pp1">
         <amx:facet name="header">
-            <amx:outputText value="Orders by Exception - #{pageFlowScope.orderStatus}" id="ot1"/>
+            <amx:outputText value="Orders by Exception - #{pageFlowScope.orderOrRctStatus}" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
             <amx:commandButton id="cb1"/>
@@ -17,7 +17,10 @@
             <dvtm:barChart var="row" value="#{bindings.soDetailsCountL2.collectionModel}" id="bc1">
                 <amx:facet name="dataStamp">
                     <dvtm:chartDataItem group="#{row.customerName}" value="#{row.count}"
-                                        series="#{bindings.soDetailsCountL2.hints.count.label}" id="cdi1"/>
+                                        series="#{bindings.soDetailsCountL2.hints.count.label}" id="cdi1" drilling="on"
+                                        action="salesOrders">
+                        <amx:setPropertyListener id="spl1" from="#{row.customerName}" to="#{pageFlowScope.customer}"/>
+                    </dvtm:chartDataItem>
                 </amx:facet>
                 <dvtm:legend rendered="false" id="l1"/>
             </dvtm:barChart>
@@ -25,10 +28,14 @@
             <dvtm:barChart var="row" value="#{bindings.soDetailsAgingL2.collectionModel}" id="bc2">
                 <amx:facet name="dataStamp">
                     <dvtm:chartDataItem group="#{row.customerName}" value="#{row.count}"
-                                        series="#{bindings.soDetailsAgingL2.hints.count.label}" id="cdi2"/>
+                                        series="#{bindings.soDetailsAgingL2.hints.count.label}" id="cdi2" drilling="on"
+                                        action="salesOrders">
+                        <amx:setPropertyListener id="spl2" from="#{row.customerName}" to="#{pageFlowScope.customer}"/>
+                    </dvtm:chartDataItem>
                 </amx:facet>
                 <dvtm:legend rendered="false" id="l2"/>
             </dvtm:barChart>
         </amx:panelGroupLayout>
     </amx:panelPage>
+    <amx:systemActionBehavior type="back" id="sab1" action="backToHome"/>
 </amx:view>
