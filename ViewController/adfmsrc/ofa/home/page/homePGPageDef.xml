@@ -27,5 +27,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
   </bindings>
 </pageDefinition>

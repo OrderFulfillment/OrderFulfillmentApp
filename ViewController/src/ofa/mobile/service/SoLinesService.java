@@ -25,8 +25,10 @@ public class SoLinesService {
         soLinesList = new ArrayList<SoLines>();
         ServiceManager serviceManager = new ServiceManager();
         String orderId = AdfmfJavaUtilities.getELValue("#{pageFlowScope.orderId}").toString();
-
-        String jsonArrayAsString = serviceManager.invokeREAD(RestURIs.getSoLinesURI(orderId, "S"));
+        String soOrRct = AdfmfJavaUtilities.getELValue("#{pageFlowScope.soOrRct}").toString();
+        String ageorCount = AdfmfJavaUtilities.getELValue("#{pageFlowScope.ageOrCount}").toString();
+        String jsonArrayAsString =
+            serviceManager.invokeREAD(RestURIs.getSoLinesURI(orderId, soOrRct, ageorCount, 0, 100));
         try {
             JSONObject jsonObject = new JSONObject(jsonArrayAsString);
             JSONObject parentnode = jsonObject.getJSONObject("PX_LINE_TYPE");

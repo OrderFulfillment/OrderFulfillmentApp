@@ -23,9 +23,12 @@ public class PoLinesService {
     private void invokeService() {
         poLinesList = new ArrayList<PoLines>();
         ServiceManager serviceManager = new ServiceManager();
-        String orderId = AdfmfJavaUtilities.getELValue("#{pageFlowScope.orderId}").toString();
+        String headerId = AdfmfJavaUtilities.getELValue("#{pageFlowScope.orderId}").toString();
+        String soOrRct = AdfmfJavaUtilities.getELValue("#{pageFlowScope.soOrRct}").toString();
+        String ageorCount = AdfmfJavaUtilities.getELValue("#{pageFlowScope.ageOrCount}").toString();
 
-        String jsonArrayAsString = serviceManager.invokeREAD(RestURIs.getSoLinesURI(orderId, "S"));
+        String jsonArrayAsString =
+            serviceManager.invokeREAD(RestURIs.getSoLinesURI(headerId, soOrRct, ageorCount, 0, 100));
         try {
             JSONObject jsonObject = new JSONObject(jsonArrayAsString);
             JSONObject parentnode = jsonObject.getJSONObject("PX_LINE_TYPE");

@@ -18,6 +18,9 @@
         <AttrNames>
           <Item Value="count"/>
           <Item Value="customerName"/>
+          <Item Value="countAgingFlag"/>
+          <Item Value="customerId"/>
+          <Item Value="soRcptFlag"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -26,6 +29,9 @@
         <AttrNames>
           <Item Value="count"/>
           <Item Value="customerName"/>
+          <Item Value="countAgingFlag"/>
+          <Item Value="customerId"/>
+          <Item Value="soRcptFlag"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

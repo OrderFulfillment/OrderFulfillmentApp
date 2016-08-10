@@ -6,18 +6,20 @@ public class RestURIs {
     }
 
     public static String getSoRctCountURI() {
-        return "/L1/v1/getsorctcount";
+        return "/L1/v2/getl1count";
     }
 
-    public static String getSoRctDetailsL2URI(String status, String soOrRct, String countOrAging) {
-        return "/L2/v1/getsorctl2/" + status + "/" + soOrRct + "/" + countOrAging;
+    public static String getSoRctDetailsL2URI(String status, String soOrRct, int minAging, int maxAging) {
+        return "/L2/v2/getsorctl2/" + status + "/" + soOrRct + "/" + minAging + "/" + maxAging;
     }
 
-    public static String getSoHeadersURI(String status, String customer, String soOrRct) {
-        return "/L3/v1/getsorctl3/" + status + "/" + customer + "/" + soOrRct;
+    public static String getSoHeadersURI(String status, int partyId, String soOrRct, String agingOrCount,
+                                         int minAgingValue, int maxAgingValue) {
+        return "/L3/v2/getsorctl3/" + status + "/" + partyId + "/" + soOrRct + "/" + agingOrCount + "/" +
+               minAgingValue + "/" + maxAgingValue;
     }
 
-    public static String getSoLinesURI(String orderId, String soOrRct) {
-        return "/L4/v1/getsorctl4/" + orderId + "/" + soOrRct;
+    public static String getSoLinesURI(String headerId, String soOrRct, String agingCount, int minAging, int maxAging) {
+        return "/L4/v1/getsorctl4/" + headerId + "/" + soOrRct + "/" + agingCount + "/" + minAging + "/" + maxAging;
     }
 }

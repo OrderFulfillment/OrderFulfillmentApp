@@ -9,6 +9,10 @@ public class ResetDataBean {
     }
 
     public void backToHomeFromSoExcp() {
-        AdfmfJavaUtilities.setELValue("#{pageFlowScope.backFrom}", OfaConstants.BACK_FROM_ORDERS_EXCEPTION);
+        AdfmfJavaUtilities.setELValue("#{pageFlowScope.backFrom}", OfaConstants.BACK_FROM_ORDERS_RCPT_EXCEPTION);
+    }
+
+    public void backToHomeFromRcptExcp() {
+        AdfmfJavaUtilities.setELValue("#{pageFlowScope.backFrom}", OfaConstants.BACK_FROM_ORDERS_RCPT_EXCEPTION);
     }
 }

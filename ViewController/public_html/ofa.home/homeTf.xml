@@ -34,6 +34,12 @@
         <fixed-outcome>back</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="resetRcptData">
+      <method>#{pageFlowScope.ResetDataBean.backToHomeFromRcptExcp}</method>
+      <outcome>
+        <fixed-outcome>back</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>homePG</from-activity-id>
       <control-flow-case id="__2">
@@ -50,6 +56,10 @@
       <control-flow-case id="__5">
         <from-outcome>poHeaders</from-outcome>
         <to-activity-id>purchaseOrders</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>backToHome</from-outcome>
+        <to-activity-id>resetRcptData</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__6">
@@ -69,6 +79,10 @@
         <from-outcome>poLines</from-outcome>
         <to-activity-id>purchaseOrdersLines</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__20">
+        <from-outcome>backToRcptByExcp</from-outcome>
+        <to-activity-id>receiptsByException</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__10">
       <from-activity-id>salesOrders</from-activity-id>
@@ -76,10 +90,21 @@
         <from-outcome>orderLines</from-outcome>
         <to-activity-id>salesOrdersLines</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__19">
+        <from-outcome>backToOrderByExcp</from-outcome>
+        <to-activity-id>ordersByException</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__16">
       <from-activity-id>resetData</from-activity-id>
       <control-flow-case id="__17">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>homePG</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>resetRcptData</from-activity-id>
+      <control-flow-case id="__18">
         <from-outcome>back</from-outcome>
         <to-activity-id>homePG</to-activity-id>
       </control-flow-case>
