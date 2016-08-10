@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+                <amx:outputText value="Receipts by Exception - #{pageFlowScope.orderOrRctStatus}" id="ot1"
+                                inlineStyle="color:White;"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink id="cl1" inlineStyle="color:White;" action="backToHome">
+                <amx:outputHtml id="oh1" styleClass="fa  fa-arrow-left fa-lg"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:panelGroupLayout id="pgl1" layout="vertical" halign="center" valign="middle">
+            <amx:outputText value="Value by Source" id="ot2"/>
+            <dvtm:barChart var="row" value="#{bindings.rctDetailsCountL2.collectionModel}" id="bc1">
+                <amx:facet name="dataStamp">
+                    <dvtm:chartDataItem group="#{row.customerName}" value="#{row.count}"
+                                        series="#{bindings.rctDetailsCountL2.hints.count.label}" id="cdi1"
+                                        action="poHeaders" drilling="on">
+                        <amx:setPropertyListener id="spl2" from="#{row.customerId}" to="#{pageFlowScope.customerId}"/>
+                        <amx:setPropertyListener id="spl4" from="#{row.customerName}" to="#{pageFlowScope.customer}"/>
+                        <amx:setPropertyListener id="spl5" from="A" to="#{pageFlowScope.ageOrCount}"/>
+                    </dvtm:chartDataItem>
+                </amx:facet>
+                <dvtm:legend position="end" id="l1"/>
+            </dvtm:barChart>
+            <amx:outputText value="Aging by Source" id="ot3"/>
+            <dvtm:barChart var="row" value="#{bindings.rctDetailsAgingL2.collectionModel}" id="bc2">
+                <amx:facet name="dataStamp">
+                    <dvtm:chartDataItem group="#{row.customerName}" value="#{row.count}"
+                                        series="#{bindings.rctDetailsAgingL2.hints.count.label}" id="cdi2" drilling="on"
+                                        action="poHeaders">
+                        <amx:setPropertyListener id="spl1" from="#{row.customerId}" to="#{pageFlowScope.customerId}"/>
+                        <amx:setPropertyListener id="spl3" from="A" to="#{pageFlowScope.ageOrCount}"/>
+                        <amx:setPropertyListener id="spl6" from="#{row.customerName}" to="#{pageFlowScope.customer}"/>
+                    </dvtm:chartDataItem>
+                </amx:facet>
+                <dvtm:legend position="end" id="l2"/>
+            </dvtm:barChart>
+        </amx:panelGroupLayout>
+    </amx:panelPage>
+    <amx:systemActionBehavior type="back" id="sab1" action="backToHome"/>
+</amx:view>

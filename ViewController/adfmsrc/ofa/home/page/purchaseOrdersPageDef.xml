@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="purchaseOrdersPageDef"
+                Package="ofa.home.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="PoHeadersService" id="PoHeadersServiceIterator"/>
+    <accessorIterator MasterBinding="PoHeadersServiceIterator" Binds="poHeaders" RangeSize="25"
+                      DataControl="PoHeadersService" BeanClass="ofa.mobile.pojo.PoHeaders" id="poHeadersIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="poHeadersIterator" id="poHeaders">
+      <nodeDefinition DefName="ofa.mobile.pojo.PoHeaders" Name="poHeaders0">
+        <AttrNames>
+          <Item Value="docHeaderId"/>
+          <Item Value="customer"/>
+          <Item Value="documentNumber"/>
+          <Item Value="location"/>
+          <Item Value="orderValue"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="top">
+                <amx:outputText value="#{pageFlowScope.documentNumber}" id="ot1" inlineStyle="color:White;"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink id="cl1" inlineStyle="color:White;" action="__back">
+                <amx:outputHtml id="oh1" styleClass="fa  fa-arrow-left fa-lg"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandButton id="cb2"/>
+        </amx:facet>
+        <amx:listView var="row" value="#{bindings.soLines.collectionModel}" fetchSize="#{bindings.soLines.rangeSize}"
+                      selectedRowKeys="#{bindings.soLines.collectionModel.selectedRow}"
+                      initialScrollRowKeys="#{bindings.soLines.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.soLines.collectionModel.makeCurrent}" showMoreStrategy="autoScroll"
+                      bufferStrategy="viewport" id="lv1" layout="cards">
+            <amx:listItem id="li1" showLinkIcon="false">
+                <amx:tableLayout id="tl1">
+                    <amx:rowLayout id="rl1">
+                        <amx:cellFormat id="cf6">
+                            <amx:outputText value="Line Number" id="ot7" inlineStyle="color:#86bc25; font-size:small;"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf1" columnSpan="1">
+                            <amx:outputText value="#{row.docLineNum}" id="ot2"
+                                            inlineStyle="color:Grey;margin-left: -40px;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl2">
+                        <amx:cellFormat id="cf7"
+                                        inlineStyle="border-top-color:Silver; border-top-style:solid; border-top-width:thin;">
+                            <amx:outputText value="Item" id="ot8" inlineStyle="color:#86bc25; font-size:small;"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf2"
+                                        inlineStyle="border-top-color:Silver; border-top-style:solid; border-top-width:thin;">
+                            <amx:outputText value="#{row.itemNumber}" id="ot3" inlineStyle="font-size:xx-large;"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf4" halign="end" rowSpan="2">
+                            <amx:outputText value="Quantity" id="ot10"
+                                            inlineStyle="color:#86bc25; font-size:small;margin-right: -100px;"/>
+                            <amx:outputText value="#{row.quantity}" id="ot5"
+                                            inlineStyle="font-size:x-large;margin-right: -90px;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl3">
+                        <amx:cellFormat id="cf8" inlineStyle="padding-top: 14px;">
+                            <amx:outputText value="Scheduled Ship Date" id="ot9"
+                                            inlineStyle="color:#86bc25; font-size:small;"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf3" inlineStyle="padding-top: 14px;padding-left: 10px;">
+                            <amx:outputText value="#{row.ssd}" id="ot4" inlineStyle="color:Grey;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl5">
+                        <amx:cellFormat id="cf9" rowSpan="1">
+                            <amx:outputText value="Warehouse" id="ot11" inlineStyle="color:#86bc25; font-size:small;"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf5" halign="start" inlineStyle="padding-left: 10px;">
+                            <amx:outputText value="#{row.warehouse}" id="ot6" inlineStyle="color:Grey;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+        </amx:listView>
+    </amx:panelPage>
+</amx:view>

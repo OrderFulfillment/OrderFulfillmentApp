@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.20" id="DataBindings"
+             SeparateXMLFiles="false" Package="ofa.mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/ofa.home.page/homePG.amx" usageId="ofa_mobile_homePGPageDef"/>
+    <page path="/ofa.home.page/ordersByException.amx" usageId="ofa_mobile_ordersByExceptionPageDef"/>
+    <page path="/ofa.home.page/salesOrders.amx" usageId="ofa_mobile_salesOrdersPageDef"/>
+    <page path="/ofa.home.page/salesOrdersLines.amx" usageId="ofa_mobile_salesOrdersLinesPageDef"/>
+    <page path="/ofa.home.page/receiptsByException.amx" usageId="ofa_mobile_receiptsByExceptionPageDef"/>
+    <page path="/ofa.springboard.page/springBoard.amx" usageId="ofa_mobile_springBoardPageDef"/>
+    <page path="/ofa.home.page/purchaseOrders.amx" usageId="ofa_mobile_purchaseOrdersPageDef"/>
+    <page path="/ofa.home.page/purchaseOrdersLines.amx" usageId="ofa_mobile_purchaseOrdersLinesPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="ofa_mobile_homePGPageDef" path="ofa.home.page.homePGPageDef"/>
+    <page id="ofa_mobile_ordersByExceptionPageDef" path="ofa.home.page.ordersByExceptionPageDef"/>
+    <page id="ofa_mobile_salesOrdersPageDef" path="ofa.home.page.salesOrdersPageDef"/>
+    <page id="ofa_mobile_salesOrdersLinesPageDef" path="ofa.home.page.salesOrdersLinesPageDef"/>
+    <page id="ofa_mobile_receiptsByExceptionPageDef" path="ofa.home.page.receiptsByExceptionPageDef"/>
+    <page id="ofa_mobile_springBoardPageDef" path="ofa.springboard.page.springBoardPageDef"/>
+    <page id="ofa_mobile_purchaseOrdersPageDef" path="ofa.home.page.purchaseOrdersPageDef"/>
+    <page id="ofa_mobile_purchaseOrdersLinesPageDef" path="ofa.home.page.purchaseOrdersLinesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="PoLinesService" path="ofa.mobile.PoLinesService"/>
+    <dc id="PoHeadersService" path="ofa.mobile.PoHeadersService"/>
+    <dc id="ApplicationFeatures" path="ofa.application.ApplicationFeatures"/>
+    <dc id="SoLinesService" path="ofa.mobile.SoLinesService"/>
+    <dc id="SoHeadersService" path="ofa.mobile.SoHeadersService"/>
+    <dc id="SoRctDetailsL2Service" path="ofa.mobile.SoRctDetailsL2Service"/>
+    <dc id="SoRctCountService" path="ofa.mobile.SoRctCountService"/>
+  </dataControlUsages>
+</Application>
