@@ -19,7 +19,9 @@ public class RestURIs {
                minAgingValue + "/" + maxAgingValue;
     }
 
-    public static String getSoLinesURI(String headerId, String soOrRct, String agingCount, int minAging, int maxAging) {
-        return "/L4/v1/getsorctl4/" + headerId + "/" + soOrRct + "/" + agingCount + "/" + minAging + "/" + maxAging;
+    public static String getSoLinesURI(String headerId, String completeStatus, String soOrRct, String agingCount,
+                                       int minAging, int maxAging) {
+        return "/L4/v1/getsorctl4/" + headerId + "/" + completeStatus + "/" + soOrRct + "/" + agingCount + "/" +
+               minAging + "/" + maxAging;
     }
 }
