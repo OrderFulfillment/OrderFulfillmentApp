@@ -9,8 +9,8 @@ import oracle.adfmf.json.JSONObject;
 
 public class SoRctDetailsL2 {
     String countAgingFlag, soRcptFlag, customerName;
-    int count;
-    BigDecimal customerId;
+    Integer count;
+    Integer customerId;
     private PropertyChangeSupport _propertyChangeSupport = new PropertyChangeSupport(this);
 
     public SoRctDetailsL2() {
@@ -18,11 +18,31 @@ public class SoRctDetailsL2 {
     }
 
     public SoRctDetailsL2(JSONObject temp) throws JSONException {
-        this.setCount(temp.getInt("COUNT"));
+        this.setCount(new Integer(temp.getString("COUNT")));
         this.setCountAgingFlag(temp.getString("COUNT_AGING_FLAG"));
-        this.setCustomerId(new BigDecimal(temp.getString("CUSTOMER_ID")));
+        this.setCustomerId(new Integer(temp.getString("CUSTOMER_ID")));
         this.setCustomerName(temp.getString("CUSTOMER_NAME"));
         this.setSoRcptFlag(temp.getString("SO_RCPT_FLAG"));
+    }
+
+    public void setCount(Integer count) {
+        Integer oldCount = this.count;
+        this.count = count;
+        _propertyChangeSupport.firePropertyChange("count", oldCount, count);
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        Integer oldCustomerId = this.customerId;
+        this.customerId = customerId;
+        _propertyChangeSupport.firePropertyChange("customerId", oldCustomerId, customerId);
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
     }
 
     public void setCountAgingFlag(String countAgingFlag) {
@@ -55,25 +75,6 @@ public class SoRctDetailsL2 {
         return customerName;
     }
 
-    public void setCount(int count) {
-        int oldCount = this.count;
-        this.count = count;
-        _propertyChangeSupport.firePropertyChange("count", oldCount, count);
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCustomerId(BigDecimal customerId) {
-        BigDecimal oldCustomerId = this.customerId;
-        this.customerId = customerId;
-        _propertyChangeSupport.firePropertyChange("customerId", oldCustomerId, customerId);
-    }
-
-    public BigDecimal getCustomerId() {
-        return customerId;
-    }
 
     public void addPropertyChangeListener(PropertyChangeListener l) {
         _propertyChangeSupport.addPropertyChangeListener(l);

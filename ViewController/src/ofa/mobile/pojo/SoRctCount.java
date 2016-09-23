@@ -9,7 +9,7 @@ import oracle.adfmf.json.JSONObject;
 
 public class SoRctCount {
     String countType, countName;
-    int countValue;
+    String countValue;
     private PropertyChangeSupport _propertyChangeSupport = new PropertyChangeSupport(this);
 
     public SoRctCount() {
@@ -19,7 +19,18 @@ public class SoRctCount {
     public SoRctCount(JSONObject temp) throws JSONException {
         this.countType = temp.getString("COUNT_TYPE");
         this.countName = temp.getString("COUNT_NAME");
-        this.countValue = temp.getInt("COUNT_VALUE");
+        int x = temp.getInt("COUNT_VALUE");
+        this.countValue = String.valueOf(x);
+    }
+
+    public void setCountValue(String countValue) {
+        String oldCountValue = this.countValue;
+        this.countValue = countValue;
+        _propertyChangeSupport.firePropertyChange("countValue", oldCountValue, countValue);
+    }
+
+    public String getCountValue() {
+        return countValue;
     }
 
     public void setCountType(String countType) {
@@ -40,16 +51,6 @@ public class SoRctCount {
 
     public String getCountName() {
         return countName;
-    }
-
-    public void setCountValue(int countValue) {
-        int oldCountValue = this.countValue;
-        this.countValue = countValue;
-        _propertyChangeSupport.firePropertyChange("countValue", oldCountValue, countValue);
-    }
-
-    public int getCountValue() {
-        return countValue;
     }
 
     public void addPropertyChangeListener(PropertyChangeListener l) {

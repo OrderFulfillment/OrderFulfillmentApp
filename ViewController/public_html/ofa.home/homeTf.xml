@@ -109,6 +109,13 @@
         <to-activity-id>homePG</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome>toLandingPage</from-outcome>
+        <to-activity-id>homePG</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <page-flow-scope-behavior>
       <push-new/>
     </page-flow-scope-behavior>

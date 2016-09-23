@@ -21,5 +21,49 @@
 .amx-android-generic .amx-listItem, .amx-android-chrome .amx-listItem {
     padding-top: 3px;
     padding-bottom: 2px;
-    width: 394px;
+}
+
+.cell-header-light {
+    background-color: White;
+    border-top-color: #86bc25;
+    border-top-style: solid !important;
+    border-bottom-color: #86bc25;
+    border-bottom-style: solid !important;
+}
+
+.amx-node amx-listItem {
+    background-color: White !important;
+    border: #86bc25 !important;
+}
+
+.amx-listItem-selected amx-node amx-listItem {
+    background-color: White !important;
+    border: #86bc25 !important;
+}
+
+.amx-listView-cards .amx-listItem {
+    background-color: White !important;
+    border: 1px solid #86bc25 !important;
+    padding: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+}
+
+.amx-android-chrome .amx-listItem {
+    padding-top: 3px;
+    padding-bottom: 2px;
+    width: 100% !important;
+}
+
+.amx-listView-cards .amx-listView-content {
+    padding-right: 0px !important;
+    padding-bottom: 8px;
+}
+
+.amx-listView {
+    border: none !important;
+}
+
+#lv1:0:potl2{
+  margin-right: 0px; !important
 }

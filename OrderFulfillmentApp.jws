@@ -32,6 +32,9 @@
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
          <hash n="Android1">
+            <hash n="android_options">
+               <value n="android_deploy_debug_mode" v="false"/>
+            </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
             </hash>
@@ -72,6 +75,44 @@
                </list>
             </hash>
             <url n="jarURL" path="deploy/Android1/Android1.jar/"/>
+            <hash n="mnfImageOptions">
+               <list n="deviceTypes">
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-xhdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Extra-High Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-xhdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-xhdpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-mdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Medium Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-mdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-mdpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-hdpi-icon.png"/>
+                     <value n="deviceTypeName" v="High Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-hdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-hdpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-xxhdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Extra-Extra-High Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-xxhdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-xxhdpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-ldpi-icon.png"/>
+                     <value n="deviceTypeName" v="Low Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-ldpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-ldpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-xxxhdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Extra-Extra-Extra-High Density"/>
+                  </hash>
+               </list>
+            </hash>
             <value n="profileClass" v="oracle.adfmf.framework.dt.deploy.android.AndroidProfile"/>
             <value n="profileName" v="Android1"/>
          </hash>
@@ -199,10 +240,10 @@
          </hash>
       </hash>
       <list n="profileList">
-         <string v="Windows1"/>
+         <string v="Android1"/>
          <string v="iOS1"/>
          <string v="OrderFulfillmentApp_archive"/>
-         <string v="Android1"/>
+         <string v="Windows1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
@@ -220,7 +261,9 @@
             </hash>
             <hash/>
          </list>
-         <list n="url-path"/>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
       </hash>
    </hash>
    <hash n="ResourceBundleOptions">

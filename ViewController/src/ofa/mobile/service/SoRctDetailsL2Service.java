@@ -45,10 +45,13 @@ public class SoRctDetailsL2Service {
             case "In Jeopardy":
                 status = "J";
                 break;
+            default:
+                status = "P";
+                break;
             }
             String soOrRct = AdfmfJavaUtilities.getELValue("#{pageFlowScope.soOrRct}").toString();
-            String countOrAging = AdfmfJavaUtilities.getELValue("C").toString();
-            int minAging = 0, maxAging = 10;
+            
+            int minAging = 0, maxAging = 45;
             String jsonArrayAsString =
                 serviceManager.invokeREAD(RestURIs.getSoRctDetailsL2URI(status, soOrRct, minAging, maxAging));
 

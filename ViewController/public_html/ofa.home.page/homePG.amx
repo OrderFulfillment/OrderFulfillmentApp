@@ -1,63 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
-    <amx:panelPage id="pp1">
-        <amx:facet name="header">
-            <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
-                <amx:outputText value="#{securityContext.userName}" id="ot1"
-                                inlineStyle="color:White;"/>
-            </amx:panelGroupLayout>
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+        <amx:outputText value="#{securityContext.userName}" id="ot1"
+                        inlineStyle="color:White;width: 290px;text-align: center;"/>
+      </amx:panelGroupLayout>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandLink actionListener="#{bindings.gotoSpringboard.execute}"
+                       disabled="#{!bindings.gotoSpringboard.enabled}" id="cl3">
+        <amx:outputHtml id="oh1" styleClass="fa fa-bars fa-lg" inlineStyle="color:white;"/>
+      </amx:commandLink>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandLink id="cl2">
+        <amx:outputHtml id="oh2" styleClass="fa fa-search fa-lg" inlineStyle="color:white;"/>
+      </amx:commandLink>
+      <amx:commandLink id="cl1">
+        <amx:outputHtml id="oh3" styleClass="fa fa-bell-o fa-lg" inlineStyle="color:white;"/>
+      </amx:commandLink>
+    </amx:facet>
+    <amx:tableLayout id="tl1" halign="center" inlineStyle="margin-bottom:10px;" width="100%">
+      <amx:rowLayout id="rl1">
+        <amx:cellFormat id="cf1" halign="center" height="40px" styleClass="cell-header-light">
+          <amx:outputText value="Seattle Manufacturing" id="ot4" inlineStyle="color:#86bc25;"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+    </amx:tableLayout>
+    <amx:panelGroupLayout id="pgl1" layout="vertical" scrollPolicy="none" halign="center" valign="middle"
+                          inlineStyle="margin:10px; margin-top:40px;">
+      <amx:outputText value="Orders by Exception" id="ot3" inlineStyle="color:#62b5e5;"/>
+      <dvtm:barChart var="row" value="#{bindings.soCount.collectionModel}" id="bc1" inlineStyle="margin-bottom:40px;"
+                     dataLabelPosition="outsideBarEdge" seriesEffect="gradient" timeAxisType="disabled"
+                     maxBarWidth="48">
+        <amx:facet name="dataStamp">
+          <dvtm:chartDataItem group="#{row.countName}" value="#{row.countValue}"
+                              series="#{bindings.soCount.hints.countValue.label}" id="cdi1" drilling="on"
+                              action="orders" color="#62b5e5" label="#{row.countValue}">
+            <amx:setPropertyListener id="spl1" from="#{row.countName}" to="#{pageFlowScope.orderOrRctStatus}"/>
+            <amx:setPropertyListener id="spl2" to="#{pageFlowScope.soOrRct}" from="S"/>
+          </dvtm:chartDataItem>
         </amx:facet>
-        <amx:facet name="primary">
-            <amx:commandLink actionListener="#{bindings.gotoSpringboard.execute}"
-                             disabled="#{!bindings.gotoSpringboard.enabled}" id="cl3">
-                <amx:outputHtml id="oh1" styleClass="fa fa-bars fa-lg" inlineStyle="color:white;"/>
-            </amx:commandLink>
+        <dvtm:legend id="l1" rendered="false"/>
+        <dvtm:yAxis id="ya2" majorIncrement="5" minimumIncrement="1" title="Sales Orders"/>
+      </dvtm:barChart>
+      <amx:outputText value="Receipts by Exception" id="ot2" inlineStyle=" color:#1b1464;"/>
+      <dvtm:barChart var="row" value="#{bindings.rcptCount.collectionModel}" id="bc2" maxBarWidth="48"
+                     dataLabelPosition="outsideBarEdge" seriesEffect="gradient">
+        <amx:facet name="dataStamp">
+          <dvtm:chartDataItem group="#{row.countName}" value="#{row.countValue}"
+                              series="#{bindings.rcptCount.hints.countValue.label}" id="cdi2" drilling="on"
+                              action="receipts" color="#1b1464" label="#{row.countValue}">
+            <amx:setPropertyListener id="spl3" to="#{pageFlowScope.soOrRct}" from="R"/>
+            <amx:setPropertyListener id="spl4" from="#{row.countName}" to="#{pageFlowScope.orderOrRctStatus}"/>
+          </dvtm:chartDataItem>
         </amx:facet>
-        <amx:facet name="secondary">
-            <amx:commandLink id="cl2">
-                <amx:outputHtml id="oh2" styleClass="fa fa-search fa-lg" inlineStyle="color:white;"/>
-            </amx:commandLink>
-            <amx:commandLink id="cl1">
-                <amx:outputHtml id="oh3" styleClass="fa fa-bell-o fa-lg" inlineStyle="color:white;"/>
-            </amx:commandLink>
-        </amx:facet>
-        <amx:tableLayout id="tl1" halign="center" inlineStyle="margin-bottom:10px;" width="100%">
-            <amx:rowLayout id="rl1">
-                <amx:cellFormat id="cf1" halign="center"
-                                height="40px" styleClass="cell-header">
-                    <amx:outputText value="Warehouse" id="ot4" inlineStyle="color:#86bc25; font-weight:bold;"/>
-                </amx:cellFormat>
-            </amx:rowLayout>
-        </amx:tableLayout>
-        <amx:panelGroupLayout id="pgl1" layout="vertical" scrollPolicy="none" halign="center" valign="middle"
-                              inlineStyle="margin:10px;">
-            <amx:outputText value="Orders by Exception" id="ot3" inlineStyle="color:#62b5e5;"/>
-            <dvtm:barChart var="row" value="#{bindings.soCount.collectionModel}" id="bc1">
-                <amx:facet name="dataStamp">
-                    <dvtm:chartDataItem group="#{row.countName}" value="#{row.countValue}"
-                                        series="#{bindings.soCount.hints.countValue.label}" id="cdi1" drilling="on"
-                                        action="orders" color="#62b5e5">
-                        <amx:setPropertyListener id="spl1" from="#{row.countName}"
-                                                 to="#{pageFlowScope.orderOrRctStatus}"/>
-                        <amx:setPropertyListener id="spl2" to="#{pageFlowScope.soOrRct}" from="S"/>
-                    </dvtm:chartDataItem>
-                </amx:facet>
-                <dvtm:legend rendered="false" id="l1"/>
-            </dvtm:barChart>
-            <amx:outputText value="Receipts by Exception" id="ot2" inlineStyle="margin-top:20px; color:#1b1464;"/>
-            <dvtm:barChart var="row" value="#{bindings.rcptCount.collectionModel}" id="bc2">
-                <amx:facet name="dataStamp">
-                    <dvtm:chartDataItem group="#{row.countName}" value="#{row.countValue}"
-                                        series="#{bindings.rcptCount.hints.countValue.label}" id="cdi2" drilling="on"
-                                        action="receipts" color="#1b1464">
-                        <amx:setPropertyListener id="spl3" to="#{pageFlowScope.soOrRct}" from="R"/>
-                        <amx:setPropertyListener id="spl4" from="#{row.countName}"
-                                                 to="#{pageFlowScope.orderOrRctStatus}"/>
-                    </dvtm:chartDataItem>
-                </amx:facet>
-                <dvtm:legend rendered="false" id="l2"/>
-            </dvtm:barChart>
-        </amx:panelGroupLayout>
-    </amx:panelPage>
+        <dvtm:legend rendered="false" id="l2"/>
+        <dvtm:yAxis id="ya1" majorIncrement="5" minimumIncrement="1" title="Receipts"/>
+      </dvtm:barChart>
+    </amx:panelGroupLayout>
+  </amx:panelPage>
 </amx:view>

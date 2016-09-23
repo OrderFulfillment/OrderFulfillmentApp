@@ -3,8 +3,9 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
     <amx:panelPage id="pp1">
         <amx:facet name="header">
-            <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
-                <amx:outputText value="#{pageFlowScope.customer}" id="ot1" inlineStyle="color:White;"/>
+            <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle"
+                                  inlineStyle="width:100%;">
+                <amx:outputText value="#{pageFlowScope.customer}" id="ot1" inlineStyle="color:White;width: 290px;text-align: center;"/>
             </amx:panelGroupLayout>
         </amx:facet>
         <amx:facet name="primary">
@@ -13,8 +14,17 @@
             </amx:commandLink>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandButton id="cb2"/>
+            <amx:commandLink id="cl2" inlineStyle="color:White;" action="toLandingPage">
+                <amx:outputHtml id="oh2" styleClass="fa  fa-home fa-lg"/>
+            </amx:commandLink>
         </amx:facet>
+        <amx:tableLayout id="tl1" halign="center" width="100%">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf1" halign="center" height="40px" styleClass="cell-header-light">
+                    <amx:outputText value="Order Details" id="ot4"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
         <amx:listView var="row" value="#{bindings.soHeaders.collectionModel}"
                       fetchSize="#{bindings.soHeaders.rangeSize}"
                       selectedRowKeys="#{bindings.soHeaders.collectionModel.selectedRow}"
@@ -22,34 +32,33 @@
                       selectionListener="#{bindings.soHeaders.collectionModel.makeCurrent}"
                       showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1" layout="cards">
             <amx:listItem id="li1" action="orderLines">
-                <amx:tableLayout id="tl1" width="100%">
-                    <amx:rowLayout id="rl1">
-                        <amx:cellFormat id="cf1" halign="end" columnSpan="3">
-                            <amx:outputText value="Ship To" id="ot6" inlineStyle="color:#86bc25; font-size:small;"/>
+                <amx:tableLayout id="tl2" width="100%"
+                                 inlineStyle="padding-bottom:10px; padding-top:10px; padding-left:20px; padding-right:20px;">
+                    <amx:rowLayout id="rl4">
+                        <amx:cellFormat id="cf7">
+                            <amx:outputText value="Order Number" id="ot6" inlineStyle="color:Grey;"/>
                         </amx:cellFormat>
                         <amx:cellFormat id="cf4" halign="end">
-                            <amx:outputText value="#{row.location}" id="ot2"
-                                            inlineStyle="font-size:medium; color:Grey;"/>
+                            <amx:outputText value="Value" id="ot2" inlineStyle="color:grey;"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
                     <amx:rowLayout id="rl2">
-                        <amx:cellFormat id="cf2"
-                                        inlineStyle="border-top-color:Silver; border-top-style:solid; border-top-width:thin;">
-                            <amx:outputText value="Order" id="ot5"
-                                            inlineStyle="color:#86bc25; font-size:small;"/>
+                        <amx:cellFormat id="cf2">
+                            <amx:outputText value="#{row.documentNumber}" id="ot5"
+                                            inlineStyle="font-weight:bold; margin-top:8px;"/>
                         </amx:cellFormat>
-                        <amx:cellFormat id="cf5"
-                                        inlineStyle="border-top-color:Silver; border-top-style:solid; border-top-width:thin;">
-                            <amx:outputText value="#{row.documentNumber}" id="ot3" inlineStyle="font-size:xx-large;"/>
+                        <amx:cellFormat id="cf5" halign="end">
+                            <amx:outputText value="#{row.orderValue}" id="ot3" inlineStyle="margin-top:8px;"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
                     <amx:rowLayout id="rl3">
                         <amx:cellFormat id="cf3">
-                            <amx:outputText value="Value" id="ot7" inlineStyle="color:#86bc25; font-size:small;"/>
+                            <amx:outputText value="Ship To" id="ot7" inlineStyle="color:Grey; margin-top:16px;"/>
                         </amx:cellFormat>
-                        <amx:cellFormat id="cf6">
-                            <amx:outputText value="#{row.orderValue}" id="ot4"
-                                            inlineStyle="font-size:x-large; color:Grey;"/>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl5">
+                        <amx:cellFormat id="cf8">
+                            <amx:outputText id="ot8" value="#{row.location}" inlineStyle="margin-top:8px;"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
                 </amx:tableLayout>
