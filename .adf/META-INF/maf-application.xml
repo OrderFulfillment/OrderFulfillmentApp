@@ -4,6 +4,11 @@
                    appControllerFolder="ApplicationController" listener-class="ofa.application.LifeCycleListenerImpl">
   <adfmf:featureReference refId="ofa.home" id="fr1" loginConnRefId="snet_ebs"/>
   <adfmf:featureReference refId="ofa.springboard" id="fr2" showOnSpringboard="false" showOnNavigationBar="false"/>
+  <adfmf:featureReference refId="ofa.customer" id="fr3"/>
+  <adfmf:featureReference refId="ofa.carrier" id="fr4"/>
+  <adfmf:featureReference refId="ofa.outboundShipment" id="fr5"/>
+  <adfmf:featureReference refId="ofa.inboundShipment" id="fr6"/>
+  <adfmf:featureReference refId="ofa.dailyProgressTracker" id="fr7"/>
   <adfmf:navigation>
     <adfmf:navigationBar enabled="false"/>
     <adfmf:springboard enabled="true" showSpringboardAtStartup="false" displayGotoSpringboardControl="false"

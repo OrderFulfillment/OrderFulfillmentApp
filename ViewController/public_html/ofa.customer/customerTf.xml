@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="customerTf">
+    <default-activity>customer</default-activity>
+    <view id="customer">
+      <page>/ofa.customer/page/customer.amx</page>
+    </view>
+    <view id="customerDetails">
+      <page>/ofa.customer/page/customerDetails.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>customer</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>search</from-outcome>
+        <to-activity-id>customer</to-activity-id>
+        <transition>none</transition>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>toDetails</from-outcome>
+        <to-activity-id>customerDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

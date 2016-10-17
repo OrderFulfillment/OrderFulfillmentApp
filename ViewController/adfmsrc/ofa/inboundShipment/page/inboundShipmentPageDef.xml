@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="inboundShipmentPageDef"
+                Package="ofa.inboundShipment.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="InboundShipmentService" id="InboundShipmentServiceIterator"/>
+    <accessorIterator MasterBinding="InboundShipmentServiceIterator" Binds="inboundShipment" RangeSize="25"
+                      DataControl="InboundShipmentService" BeanClass="ofa.mobile.pojo.InboundShipment"
+                      id="inboundShipmentIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <tree IterBinding="inboundShipmentIterator" id="inboundShipment">
+      <nodeDefinition DefName="ofa.mobile.pojo.InboundShipment" Name="inboundShipment0">
+        <AttrNames>
+          <Item Value="shipNumber"/>
+          <Item Value="headerId"/>
+          <Item Value="identifier"/>
+          <Item Value="source"/>
+          <Item Value="value"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

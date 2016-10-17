@@ -8,25 +8,25 @@
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <view id="homePG">
-      <page>/ofa.home.page/homePG.amx</page>
+      <page>/ofa.home/page/homePG.amx</page>
     </view>
     <view id="ordersByException">
-      <page>/ofa.home.page/ordersByException.amx</page>
+      <page>/ofa.home/page/ordersByException.amx</page>
     </view>
     <view id="receiptsByException">
-      <page>/ofa.home.page/receiptsByException.amx</page>
+      <page>/ofa.home/page/receiptsByException.amx</page>
     </view>
     <view id="purchaseOrders">
-      <page>/ofa.home.page/purchaseOrders.amx</page>
+      <page>/ofa.home/page/purchaseOrders.amx</page>
     </view>
     <view id="salesOrders">
-      <page>/ofa.home.page/salesOrders.amx</page>
+      <page>/ofa.home/page/salesOrders.amx</page>
     </view>
     <view id="purchaseOrdersLines">
-      <page>/ofa.home.page/purchaseOrdersLines.amx</page>
+      <page>/ofa.home/page/purchaseOrdersLines.amx</page>
     </view>
     <view id="salesOrdersLines">
-      <page>/ofa.home.page/salesOrdersLines.amx</page>
+      <page>/ofa.home/page/salesOrdersLines.amx</page>
     </view>
     <method-call id="resetData">
       <method>#{pageFlowScope.ResetDataBean.backToHomeFromSoExcp}</method>

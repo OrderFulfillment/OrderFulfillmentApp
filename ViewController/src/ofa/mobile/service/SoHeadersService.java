@@ -1,12 +1,10 @@
 package ofa.mobile.service;
 
 import java.util.ArrayList;
-
 import java.util.Iterator;
 import java.util.List;
 
 import ofa.mobile.pojo.SoHeaders;
-import ofa.mobile.pojo.SoRctCount;
 import ofa.mobile.rest.RestURIs;
 import ofa.mobile.rest.ServiceManager;
 
@@ -30,7 +28,7 @@ public class SoHeadersService {
         case "On Hold":
             status = "H";
             break;
-        case "Back Ordered Count":
+        case "Back Ordered":
             status = "B";
             break;
         case "In Jeopardy":
@@ -71,7 +69,7 @@ public class SoHeadersService {
             SoHeaders headers = itr.next();
             tempList.add(headers);
         }
-        soHeadersArray = tempList.toArray(new SoHeaders[tempList.size()]);
+        soHeadersArray = tempList.toArray(new SoHeaders[0]);
         return soHeadersArray;
     }
 }

@@ -1,7 +1,5 @@
 package ofa.mobile.pojo;
 
-import java.math.BigDecimal;
-
 import oracle.adfmf.java.beans.PropertyChangeListener;
 import oracle.adfmf.java.beans.PropertyChangeSupport;
 import oracle.adfmf.json.JSONException;
@@ -18,11 +16,31 @@ public class SoRctDetailsL2 {
     }
 
     public SoRctDetailsL2(JSONObject temp) throws JSONException {
-        this.setCount(new Integer(temp.getString("COUNT")));
-        this.setCountAgingFlag(temp.getString("COUNT_AGING_FLAG"));
-        this.setCustomerId(new Integer(temp.getString("CUSTOMER_ID")));
-        this.setCustomerName(temp.getString("CUSTOMER_NAME"));
-        this.setSoRcptFlag(temp.getString("SO_RCPT_FLAG"));
+        StringBuffer local;
+        local = new StringBuffer(temp.getString("COUNT"));
+        if (local.indexOf("@nil") == -1) {
+            this.setCount(new Integer(temp.getString("COUNT")));
+        }
+
+        local = new StringBuffer(temp.getString("COUNT_AGING_FLAG"));
+        if (local.indexOf("@nil") == -1) {
+            this.setCountAgingFlag(temp.getString("COUNT_AGING_FLAG"));
+        }
+
+        local = new StringBuffer(temp.getString("CUSTOMER_ID"));
+        if (local.indexOf("@nil") == -1) {
+            this.setCustomerId(new Integer(temp.getString("CUSTOMER_ID")));
+        }
+
+        local = new StringBuffer(temp.getString("CUSTOMER_NAME"));
+        if (local.indexOf("@nil") == -1) {
+            this.setCustomerName(temp.getString("CUSTOMER_NAME"));
+        }
+
+        local = new StringBuffer(temp.getString("SO_RCPT_FLAG"));
+        if (local.indexOf("@nil") == -1) {
+            this.setSoRcptFlag(temp.getString("SO_RCPT_FLAG"));
+        }
     }
 
     public void setCount(Integer count) {

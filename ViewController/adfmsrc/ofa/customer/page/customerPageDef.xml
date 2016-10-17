@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="customerPageDef"
+                Package="ofa.customer.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CustomerRTSService" id="CustomerRTSServiceIterator"/>
+    <accessorIterator MasterBinding="CustomerRTSServiceIterator" Binds="customerRTS" RangeSize="25"
+                      DataControl="CustomerRTSService" BeanClass="ofa.mobile.pojo.CustomerRTS"
+                      id="customerRTSIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CustomerNSService" id="CustomerNSServiceIterator"/>
+    <accessorIterator MasterBinding="CustomerNSServiceIterator" Binds="customerNS" RangeSize="25"
+                      DataControl="CustomerNSService" BeanClass="ofa.mobile.pojo.CustomerNS" id="customerNSIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <tree IterBinding="customerRTSIterator" id="customerRTS">
+      <nodeDefinition DefName="ofa.mobile.pojo.CustomerRTS" Name="customerRTS0">
+        <AttrNames>
+          <Item Value="customer"/>
+          <Item Value="count"/>
+          <Item Value="customerId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="customerNSIterator" id="customerNS">
+      <nodeDefinition DefName="ofa.mobile.pojo.CustomerNS" Name="customerNS0">
+        <AttrNames>
+          <Item Value="customer"/>
+          <Item Value="count"/>
+          <Item Value="customerId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

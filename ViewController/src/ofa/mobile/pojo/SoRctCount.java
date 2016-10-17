@@ -17,10 +17,21 @@ public class SoRctCount {
     }
 
     public SoRctCount(JSONObject temp) throws JSONException {
-        this.countType = temp.getString("COUNT_TYPE");
-        this.countName = temp.getString("COUNT_NAME");
-        int x = temp.getInt("COUNT_VALUE");
-        this.countValue = String.valueOf(x);
+        StringBuffer local;
+        local = new StringBuffer(temp.getString("COUNT_TYPE"));
+        if (local.indexOf("@nil") == -1) {
+            this.countType = temp.getString("COUNT_TYPE");
+        }
+
+        local = new StringBuffer(temp.getString("COUNT_NAME"));
+        if (local.indexOf("@nil") == -1) {
+            this.countName = temp.getString("COUNT_NAME");
+        }
+
+        local = new StringBuffer(temp.getString("COUNT_VALUE"));
+        if (local.indexOf("@nil") == -1) {
+            this.countValue = String.valueOf(temp.getInt("COUNT_VALUE"));
+        }
     }
 
     public void setCountValue(String countValue) {

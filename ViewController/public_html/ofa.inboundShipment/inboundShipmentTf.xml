@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="inboundShipmentTf">
+    <default-activity>inboundShipment</default-activity>
+    <view id="inboundShipment">
+      <page>/ofa.inboundShipment/page/inboundShipment.amx</page>
+    </view>
+    <view id="inboundShipmentDetails">
+      <page>/ofa.inboundShipment/page/inboundShipmentDetails.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>inboundShipment</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toDetails</from-outcome>
+        <to-activity-id>inboundShipmentDetails</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>search</from-outcome>
+        <to-activity-id>inboundShipment</to-activity-id>
+        <transition>none</transition>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

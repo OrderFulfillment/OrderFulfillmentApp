@@ -1,13 +1,10 @@
 package ofa.mobile.service;
 
-import java.math.BigDecimal;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import ofa.mobile.pojo.SoRctCount;
-
 import ofa.mobile.rest.RestURIs;
 import ofa.mobile.rest.ServiceManager;
 
@@ -54,7 +51,7 @@ public class SoRctCountService {
             if (soCount.getCountType().equals("SO"))
                 tempList.add(soCount);
         }
-        soCountArray = tempList.toArray(new SoRctCount[tempList.size()]);
+        soCountArray = tempList.toArray(new SoRctCount[0]);
         return soCountArray;
     }
 
@@ -70,7 +67,7 @@ public class SoRctCountService {
             if (rctCount.getCountType().equals("RPT"))
                 tempList.add(rctCount);
         }
-        rctCountArray = tempList.toArray(new SoRctCount[tempList.size()]);
+        rctCountArray = tempList.toArray(new SoRctCount[0]);
         return rctCountArray;
     }
 }

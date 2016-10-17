@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">carrier</property>
+      <property
+         name="x">181.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>carrier&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">338.44238</property>
+      <property
+         name="page">/ofa.carrier/page/carrier.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">carrierDetails</property>
+      <property
+         name="x">428.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>carrierDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">325.5459</property>
+      <property
+         name="page">/ofa.carrier/page/carrierDetails.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View2">
+      <property
+         name="fromOutcome">search</property>
+      <property
+         name="sdm:polyPoints">T44,177.5,284.0918,184.5,284.0918,T56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">toDetails</property>
+      <property
+         name="sdm:polyPoints">R50,222.0,338.0918,387.0,325.1953,L50</property>
+   </ControlFlowCase>
+</SDM>

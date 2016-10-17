@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="springboard" inlineStyle="border-right-color:Silver; border-right-style:ridge;">
+        <amx:facet name="header">
+            <amx:outputText value="#{securityContext.userName}" id="ot11" inlineStyle="color:White;"/>
+        </amx:facet>
+        <amx:facet name="primary"/>
+        <amx:facet name="secondary">
+            <amx:commandLink id="cl1" inlineStyle="color:White;"
+                             action="goToFeature">
+                <amx:outputHtml id="oh11" styleClass="fa fa-home fa-lg"/>
+                <amx:setPropertyListener id="spl2" to="#{pageFlowScope.goTo}" from="ofa.home"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:tableLayout id="tl1" halign="center" inlineStyle="margin-bottom:10px;" width="100%">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf1" halign="center" height="40px" styleClass="cell-header"/>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:listView var="row" showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
+            <amx:listItem id="li1" showLinkIcon="false" inlineStyle="border-bottom: none;" action="goToFeature">
+                <amx:tableLayout id="tl2" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl11">
+                        <amx:cellFormat id="cf21" width="30px" valign="middle" height="40px"
+                                        styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh1" styleClass="fa fa-users fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf2" valign="middle" styleClass="springboard-cell-border">
+                            <amx:outputText value="Customers" id="ot1" inlineStyle="font-size:medium;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:setPropertyListener id="spl1" to="#{pageFlowScope.goTo}" from="ofa.customer"/>
+            </amx:listItem>
+            <amx:listItem id="li2" inlineStyle="border-bottom: none;" action="goToFeature">
+                <amx:tableLayout id="tl3" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl12">
+                        <amx:cellFormat id="cf22" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh12" styleClass="fa fa-arrow-circle-right fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf25" styleClass="springboard-cell-border">
+                            <amx:outputText value="Outbound Shipments" id="ot12"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:setPropertyListener id="spl3" to="#{pageFlowScope.goTo}" from="ofa.outboundShipment"/>
+            </amx:listItem>
+            <amx:listItem id="li3" inlineStyle="border-bottom: none;" action="goToFeature">
+                <amx:tableLayout id="tl4" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl13">
+                        <amx:cellFormat id="cf23" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh13" styleClass="fa fa-arrow-circle-left fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf24" styleClass="springboard-cell-border">
+                            <amx:outputText value="Inbound Shipments" id="ot13"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:setPropertyListener id="spl5" to="#{pageFlowScope.goTo}" from="ofa.inboundShipment"/>
+            </amx:listItem>
+            <amx:listItem id="li4" inlineStyle="border-bottom: none;" action="goToFeature">
+                <amx:tableLayout id="tl11" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl4">
+                        <amx:cellFormat id="cf7" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh4" styleClass="fa fa-truck fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf8" styleClass="springboard-cell-border">
+                            <amx:outputText value="Carriers" id="ot8"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:setPropertyListener id="spl4" to="#{pageFlowScope.goTo}" from="ofa.carrier"/>
+            </amx:listItem>
+            <amx:listItem id="li5" inlineStyle="border-bottom: none;" action="goToFeature">
+                <amx:tableLayout id="tl10" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl5">
+                        <amx:cellFormat id="cf9" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh5" styleClass="fa fa-calendar fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf10" styleClass="springboard-cell-border">
+                            <amx:outputText value="Daily Tracker" id="ot7"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:setPropertyListener id="spl6" to="#{pageFlowScope.goTo}" from="ofa.dailyProgressTracker"/>
+            </amx:listItem>
+            <amx:listItem id="li6" inlineStyle="border-bottom: none;">
+                <amx:tableLayout id="tl9" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl6">
+                        <amx:cellFormat id="cf11" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh6" styleClass="fa fa-bell fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf12" styleClass="springboard-cell-border">
+                            <amx:outputText value="My Alerts" id="ot6"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+            <amx:listItem id="li7" inlineStyle="border-bottom: none;">
+                <amx:tableLayout id="tl8" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl7">
+                        <amx:cellFormat id="cf13" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh7" styleClass="fa fa-gear fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf14" styleClass="springboard-cell-border">
+                            <amx:outputText value="Settings" id="ot5"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+            <amx:listItem id="li8" inlineStyle="border-bottom: none;">
+                <amx:tableLayout id="tl7" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl8">
+                        <amx:cellFormat id="cf15" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh8" styleClass="fa fa-search fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf16" styleClass="springboard-cell-border">
+                            <amx:outputText value="Search" id="ot4"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+            <amx:listItem id="li9" inlineStyle="border-bottom: none;">
+                <amx:tableLayout id="tl6" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl9">
+                        <amx:cellFormat id="cf17" width="30px" height="40px" styleClass="springboard-cell-border">
+                            <amx:outputHtml id="oh9" styleClass="fa fa-info-circle fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf18" styleClass="springboard-cell-border">
+                            <amx:outputText value="About Us" id="ot3"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+            <amx:listItem id="li10" inlineStyle="border-bottom: none;">
+                <amx:tableLayout id="tl5" inlineStyle="margin-left:10px; margin-right:10px;" width="100%">
+                    <amx:rowLayout id="rl10">
+                        <amx:cellFormat id="cf19" width="30px" height="40px">
+                            <amx:outputHtml id="oh10" styleClass="fa fa-sign-out fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf20">
+                            <amx:outputText value="Sign Out" id="ot2"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+        </amx:listView>
+    </amx:panelPage>
+</amx:view>

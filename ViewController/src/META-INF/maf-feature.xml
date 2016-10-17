@@ -7,7 +7,32 @@
   </adfmf:feature>
   <adfmf:feature id="ofa.springboard" name="springboard">
     <adfmf:content id="ofa.springboard.1">
-      <adfmf:amx file="ofa.springboard.page/springBoard.amx"/>
+      <adfmf:amx file="ofa.springboard/springboardTf.xml#springboardTf"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.customer" name="customer">
+    <adfmf:content id="ofa.customer.1">
+      <adfmf:amx file="ofa.customer/customerTf.xml#customerTf"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.carrier" name="carrier">
+    <adfmf:content id="ofa.carrier.1">
+      <adfmf:amx file="ofa.carrier/carrierTf.xml#carrierTf"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.outboundShipment" name="outboundShipment">
+    <adfmf:content id="ofa.outboundShipment.1">
+      <adfmf:amx file="ofa.outboundShipment/outboundShipmentTf.xml#outboundShipmentTf"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.inboundShipment" name="inboundShipment">
+    <adfmf:content id="ofa.inboundShipment.1">
+      <adfmf:amx file="ofa.inboundShipment/inboundShipmentTf.xml#inboundShipmentTf"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.dailyProgressTracker" name="dailyProgressTracker">
+    <adfmf:content id="ofa.dailyProgressTracker.1">
+      <adfmf:amx file="ofa.dailyProgressTracker/progressTrackerTf.xml#progressTrackerTf"/>
     </adfmf:content>
   </adfmf:feature>
 </adfmf:features>

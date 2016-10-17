@@ -1,12 +1,10 @@
 package ofa.mobile.service;
 
 import java.util.ArrayList;
-
 import java.util.Iterator;
 import java.util.List;
 
 import ofa.mobile.constants.OfaConstants;
-import ofa.mobile.pojo.SoRctCount;
 import ofa.mobile.pojo.SoRctDetailsL2;
 import ofa.mobile.rest.RestURIs;
 import ofa.mobile.rest.ServiceManager;
@@ -39,7 +37,7 @@ public class SoRctDetailsL2Service {
             case "On Hold":
                 status = "H";
                 break;
-            case "Back Ordered Count":
+            case "Back Ordered":
                 status = "B";
                 break;
             case "In Jeopardy":
@@ -50,8 +48,8 @@ public class SoRctDetailsL2Service {
                 break;
             }
             String soOrRct = AdfmfJavaUtilities.getELValue("#{pageFlowScope.soOrRct}").toString();
-            
-            int minAging = 0, maxAging = 45;
+
+            int minAging = 0, maxAging = 60;
             String jsonArrayAsString =
                 serviceManager.invokeREAD(RestURIs.getSoRctDetailsL2URI(status, soOrRct, minAging, maxAging));
 
@@ -87,7 +85,7 @@ public class SoRctDetailsL2Service {
                 if (rctDetails.getSoRcptFlag().equals("R") && rctDetails.getCountAgingFlag().equals("C"))
                     tempList.add(rctDetails);
             }
-            rctDetailsArray = tempList.toArray(new SoRctDetailsL2[tempList.size()]);
+            rctDetailsArray = tempList.toArray(new SoRctDetailsL2[0]);
             return rctDetailsArray;
         } catch (Exception e) {
             e.printStackTrace();
@@ -108,7 +106,7 @@ public class SoRctDetailsL2Service {
                 if (rctDetails.getSoRcptFlag().equals("R") && rctDetails.getCountAgingFlag().equals("A"))
                     tempList.add(rctDetails);
             }
-            rctDetailsArray = tempList.toArray(new SoRctDetailsL2[tempList.size()]);
+            rctDetailsArray = tempList.toArray(new SoRctDetailsL2[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -128,7 +126,7 @@ public class SoRctDetailsL2Service {
                 if (soDetails.getSoRcptFlag().equals("S") && soDetails.getCountAgingFlag().equals("A"))
                     tempList.add(soDetails);
             }
-            soDetailsArray = tempList.toArray(new SoRctDetailsL2[tempList.size()]);
+            soDetailsArray = tempList.toArray(new SoRctDetailsL2[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -148,7 +146,7 @@ public class SoRctDetailsL2Service {
                 if (soDetails.getSoRcptFlag().equals("S") && soDetails.getCountAgingFlag().equals("C"))
                     tempList.add(soDetails);
             }
-            soDetailsArray = tempList.toArray(new SoRctDetailsL2[tempList.size()]);
+            soDetailsArray = tempList.toArray(new SoRctDetailsL2[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="carrierDetailsPageDef"
+                Package="ofa.carrier.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CarrierRTSDetailService" id="CarrierRTSDetailServiceIterator"/>
+    <accessorIterator MasterBinding="CarrierRTSDetailServiceIterator" Binds="carrierRTSDetail" RangeSize="25"
+                      DataControl="CarrierRTSDetailService" BeanClass="ofa.mobile.pojo.CarrierRTSDetail"
+                      id="carrierRTSDetailIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CarrierNSDetailService" id="CarrierNSDetailServiceIterator"/>
+    <accessorIterator MasterBinding="CarrierNSDetailServiceIterator" Binds="carrierNSDetail" RangeSize="25"
+                      DataControl="CarrierNSDetailService" BeanClass="ofa.mobile.pojo.CarrierNSDetail"
+                      id="carrierNSDetailIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="carrierRTSDetailIterator" id="carrierRTSDetail">
+      <nodeDefinition DefName="ofa.mobile.pojo.CarrierRTSDetail" Name="carrierRTSDetail0">
+        <AttrNames>
+          <Item Value="orderNumber"/>
+          <Item Value="shipTo"/>
+          <Item Value="value"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="carrierNSDetailIterator" id="carrierNSDetail">
+      <nodeDefinition DefName="ofa.mobile.pojo.CarrierNSDetail" Name="carrierNSDetail0">
+        <AttrNames>
+          <Item Value="orderNumber"/>
+          <Item Value="shipTo"/>
+          <Item Value="value"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

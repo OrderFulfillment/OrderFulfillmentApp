@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import ofa.mobile.pojo.PoLines;
-import ofa.mobile.pojo.PoLines;
 import ofa.mobile.rest.RestURIs;
 import ofa.mobile.rest.ServiceManager;
 
@@ -32,7 +31,7 @@ public class PoLinesService {
         case "On Hold":
             status = "H";
             break;
-        case "Back Ordered Count":
+        case "Back Ordered":
             status = "B";
             break;
         case "In Jeopardy":
@@ -69,7 +68,7 @@ public class PoLinesService {
             PoLines lines = itr.next();
             tempList.add(lines);
         }
-        soLinesArray = tempList.toArray(new PoLines[tempList.size()]);
+        soLinesArray = tempList.toArray(new PoLines[0]);
         return soLinesArray;
     }
 }

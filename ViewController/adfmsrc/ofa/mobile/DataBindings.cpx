@@ -6,14 +6,26 @@
              className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
   </definitionFactories>
   <pageMap>
-    <page path="/ofa.home.page/homePG.amx" usageId="ofa_mobile_homePGPageDef"/>
-    <page path="/ofa.home.page/ordersByException.amx" usageId="ofa_mobile_ordersByExceptionPageDef"/>
-    <page path="/ofa.home.page/salesOrders.amx" usageId="ofa_mobile_salesOrdersPageDef"/>
-    <page path="/ofa.home.page/salesOrdersLines.amx" usageId="ofa_mobile_salesOrdersLinesPageDef"/>
-    <page path="/ofa.home.page/receiptsByException.amx" usageId="ofa_mobile_receiptsByExceptionPageDef"/>
-    <page path="/ofa.springboard.page/springBoard.amx" usageId="ofa_mobile_springBoardPageDef"/>
-    <page path="/ofa.home.page/purchaseOrders.amx" usageId="ofa_mobile_purchaseOrdersPageDef"/>
-    <page path="/ofa.home.page/purchaseOrdersLines.amx" usageId="ofa_mobile_purchaseOrdersLinesPageDef"/>
+    <page path="/ofa.home/page/homePG.amx" usageId="ofa_mobile_homePGPageDef"/>
+    <page path="/ofa.home/page/ordersByException.amx" usageId="ofa_mobile_ordersByExceptionPageDef"/>
+    <page path="/ofa.home/page/salesOrders.amx" usageId="ofa_mobile_salesOrdersPageDef"/>
+    <page path="/ofa.home/page/salesOrdersLines.amx" usageId="ofa_mobile_salesOrdersLinesPageDef"/>
+    <page path="/ofa.home/page/receiptsByException.amx" usageId="ofa_mobile_receiptsByExceptionPageDef"/>
+    <page path="/ofa.springboard/page/springBoard.amx" usageId="ofa_mobile_springBoardPageDef"/>
+    <page path="/ofa.home/page/purchaseOrders.amx" usageId="ofa_mobile_purchaseOrdersPageDef"/>
+    <page path="/ofa.home/page/purchaseOrdersLines.amx" usageId="ofa_mobile_purchaseOrdersLinesPageDef"/>
+    <page path="/ofa.customer/page/customer.amx" usageId="ofa_mobile_customerPageDef"/>
+    <page path="/ofa.springboard/springboardTf.xml#springboardTf@gotoFeature"
+          usageId="ofa_mobile_springboardTf_springboardTf_gotoFeaturePageDef"/>
+    <page path="/ofa.customer/page/customerDetails.amx" usageId="ofa_mobile_customerDetailsPageDef"/>
+    <page path="/ofa.carrier/page/carrier.amx" usageId="ofa_mobile_carrierPageDef"/>
+    <page path="/ofa.carrier/page/carrierDetails.amx" usageId="ofa_mobile_carrierDetailsPageDef"/>
+    <page path="/ofa.inboundShipment/page/inboundShipment.amx" usageId="ofa_mobile_inboundShipmentPageDef"/>
+    <page path="/ofa.inboundShipment/page/inboundShipmentDetails.amx"
+          usageId="ofa_mobile_inboundShipmentDetailsPageDef"/>
+    <page path="/ofa.outboundShipment/page/outboundShipment.amx" usageId="ofa_mobile_outboundShipmentPageDef"/>
+    <page path="/ofa.outboundShipment/page/outboundShipmentDetails.amx"
+          usageId="ofa_mobile_outboundShipmentDetailsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="ofa_mobile_homePGPageDef" path="ofa.home.page.homePGPageDef"/>
@@ -24,8 +36,31 @@
     <page id="ofa_mobile_springBoardPageDef" path="ofa.springboard.page.springBoardPageDef"/>
     <page id="ofa_mobile_purchaseOrdersPageDef" path="ofa.home.page.purchaseOrdersPageDef"/>
     <page id="ofa_mobile_purchaseOrdersLinesPageDef" path="ofa.home.page.purchaseOrdersLinesPageDef"/>
+    <page id="ofa_mobile_customerPageDef" path="ofa.customer.page.customerPageDef"/>
+    <page id="ofa_mobile_springboardTf_springboardTf_gotoFeaturePageDef"
+          path="ofa.springboard.springboardTf_springboardTf_gotoFeaturePageDef"/>
+    <page id="ofa_mobile_customerDetailsPageDef" path="ofa.customer.page.customerDetailsPageDef"/>
+    <page id="ofa_mobile_carrierPageDef" path="ofa.carrier.page.carrierPageDef"/>
+    <page id="ofa_mobile_carrierDetailsPageDef" path="ofa.carrier.page.carrierDetailsPageDef"/>
+    <page id="ofa_mobile_inboundShipmentPageDef" path="ofa.inboundShipment.page.inboundShipmentPageDef"/>
+    <page id="ofa_mobile_inboundShipmentDetailsPageDef" path="ofa.inboundShipment.page.inboundShipmentDetailsPageDef"/>
+    <page id="ofa_mobile_outboundShipmentPageDef" path="ofa.outboundShipment.page.outboundShipmentPageDef"/>
+    <page id="ofa_mobile_outboundShipmentDetailsPageDef"
+          path="ofa.outboundShipment.page.outboundShipmentDetailsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="OutboundShipmentDetailService" path="ofa.mobile.OutboundShipmentDetailService"/>
+    <dc id="OutboundShipmentService" path="ofa.mobile.OutboundShipmentService"/>
+    <dc id="InboundShipmentDetailService" path="ofa.mobile.InboundShipmentDetailService"/>
+    <dc id="InboundShipmentService" path="ofa.mobile.InboundShipmentService"/>
+    <dc id="CarrierNSDetailService" path="ofa.mobile.CarrierNSDetailService"/>
+    <dc id="CarrierRTSDetailService" path="ofa.mobile.CarrierRTSDetailService"/>
+    <dc id="CarrierRTSService" path="ofa.mobile.CarrierRTSService"/>
+    <dc id="CarrierNSService" path="ofa.mobile.CarrierNSService"/>
+    <dc id="CustomerNSDetailService" path="ofa.mobile.CustomerNSDetailService"/>
+    <dc id="CustomerRTSDetailService" path="ofa.mobile.CustomerRTSDetailService"/>
+    <dc id="CustomerNSService" path="ofa.mobile.CustomerNSService"/>
+    <dc id="CustomerRTSService" path="ofa.mobile.CustomerRTSService"/>
     <dc id="PoLinesService" path="ofa.mobile.PoLinesService"/>
     <dc id="PoHeadersService" path="ofa.mobile.PoHeadersService"/>
     <dc id="ApplicationFeatures" path="ofa.application.ApplicationFeatures"/>

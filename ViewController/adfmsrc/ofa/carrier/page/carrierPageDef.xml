@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="carrierPageDef"
+                Package="ofa.carrier.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CarrierNSService" id="CarrierNSServiceIterator"/>
+    <accessorIterator MasterBinding="CarrierNSServiceIterator" Binds="carrierNS" RangeSize="25"
+                      DataControl="CarrierNSService" BeanClass="ofa.mobile.pojo.CarrierNS" id="carrierNSIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CarrierRTSService" id="CarrierRTSServiceIterator"/>
+    <accessorIterator MasterBinding="CarrierRTSServiceIterator" Binds="carrierRTS" RangeSize="25"
+                      DataControl="CarrierRTSService" BeanClass="ofa.mobile.pojo.CarrierRTS" id="carrierRTSIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="carrierNSIterator" id="carrierNS">
+      <nodeDefinition DefName="ofa.mobile.pojo.CarrierNS" Name="carrierNS0">
+        <AttrNames>
+          <Item Value="carrier"/>
+          <Item Value="count"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="carrierRTSIterator" id="carrierRTS">
+      <nodeDefinition DefName="ofa.mobile.pojo.CarrierRTS" Name="carrierRTS0">
+        <AttrNames>
+          <Item Value="carrier"/>
+          <Item Value="count"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">customer</property>
+      <property
+         name="x">599.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>customer&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">356.7412</property>
+      <property
+         name="page">/ofa.customer/page/customer.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase3"
+      from="View2"
+      to="View2">
+      <property
+         name="fromOutcome">search</property>
+      <property
+         name="sdm:polyPoints">T44,595.5,302.39062,602.5,302.39062,T56</property>
+   </ControlFlowCase>
+   <View
+      id="View4">
+      <property
+         name="activityId">customerDetails</property>
+      <property
+         name="x">222.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>customerDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">320.89648</property>
+      <property
+         name="page">/ofa.customer/page/customerDetails.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View4">
+      <property
+         name="fromOutcome">toDetails</property>
+      <property
+         name="sdm:polyPoints">L50,558.0,356.39062,263.0,320.5459,R50</property>
+   </ControlFlowCase>
+</SDM>

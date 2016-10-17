@@ -17,15 +17,46 @@ public class PoLines {
     }
 
     public PoLines(JSONObject temp) throws JSONException {
-        this.setCarrier(temp.getString("CARRIER"));
-        this.setDocHeaderId(new BigDecimal(temp.getString("DOC_HEADER_ID")));
-        this.setDocLineId(new BigDecimal(temp.getString("DOC_LINE_ID")));
-        this.setDocLineNum(temp.getString("DOC_LINE_NUM"));
-        this.setItemNumber(temp.getString("ITEM_NUMBER"));
-        this.setQuantity(new BigDecimal(temp.getString("QUANTITY")));
-        this.setSsd(temp.getString("SSD"));
-        this.setWarehouse(temp.getString("WAREHOUSE"));
+        StringBuffer local;
+        local = new StringBuffer(temp.getString("CARRIER"));
+        if (local.indexOf("@nil") == -1) {
+            this.setCarrier(temp.getString("CARRIER"));
+        }
 
+        local = new StringBuffer(temp.getString("DOC_HEADER_ID"));
+        if (local.indexOf("@nil") == -1) {
+            this.setDocHeaderId(new BigDecimal(temp.getString("DOC_HEADER_ID")));
+        }
+
+        local = new StringBuffer(temp.getString("DOC_LINE_ID"));
+        if (local.indexOf("@nil") == -1) {
+            this.setDocLineId(new BigDecimal(temp.getString("DOC_LINE_ID")));
+        }
+
+        local = new StringBuffer(temp.getString("DOC_LINE_NUM"));
+        if (local.indexOf("@nil") == -1) {
+            this.setDocLineNum(temp.getString("DOC_LINE_NUM"));
+        }
+
+        local = new StringBuffer(temp.getString("ITEM_NUMBER"));
+        if (local.indexOf("@nil") == -1) {
+            this.setItemNumber(temp.getString("ITEM_NUMBER"));
+        }
+
+        local = new StringBuffer(temp.getString("QUANTITY"));
+        if (local.indexOf("@nil") == -1) {
+            this.setQuantity(new BigDecimal(temp.getString("QUANTITY")));
+        }
+
+        local = new StringBuffer(temp.getString("SSD"));
+        if (local.indexOf("@nil") == -1) {
+            this.setSsd(temp.getString("SSD"));
+        }
+
+        local = new StringBuffer(temp.getString("WAREHOUSE"));
+        if (local.indexOf("@nil") == -1) {
+            this.setWarehouse(temp.getString("WAREHOUSE"));
+        } 
     }
 
     public void setDocHeaderId(BigDecimal docHeaderId) {

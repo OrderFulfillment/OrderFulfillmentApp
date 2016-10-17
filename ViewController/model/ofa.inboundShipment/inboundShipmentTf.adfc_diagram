@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">inboundShipment</property>
+      <property
+         name="x">445.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>inboundShipment&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">273.1953</property>
+      <property
+         name="page">/ofa.inboundShipment/page/inboundShipment.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">inboundShipmentDetails</property>
+      <property
+         name="x">802.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>inboundShipmentDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">193.59766</property>
+      <property
+         name="page">/ofa.inboundShipment/page/inboundShipmentDetails.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">toDetails</property>
+      <property
+         name="sdm:polyPoints">R50,486.0,272.84473,761.0,193.24707,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View2">
+      <property
+         name="fromOutcome">search</property>
+      <property
+         name="sdm:polyPoints">T44,441.5,218.84473,448.5,218.84473,T56</property>
+   </ControlFlowCase>
+</SDM>

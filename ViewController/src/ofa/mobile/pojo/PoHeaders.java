@@ -17,11 +17,31 @@ public class PoHeaders {
     }
 
     public PoHeaders(JSONObject temp) throws JSONException {
-        this.setDocHeaderId(new BigDecimal(temp.getString("DOC_HEADER_ID")));
-        this.setCustomer(temp.getString("CUSTOMER"));
-        this.setDocumentNumber(temp.getString("DOCUMENT_NUMBER"));
-        this.setLocation(temp.getString("LOCATION"));
-        this.setOrderValue(new BigDecimal(temp.getString("ORDER_VALUE")));
+        StringBuffer local;
+        local = new StringBuffer(temp.getString("DOC_HEADER_ID"));
+        if (local.indexOf("@nil") == -1) {
+            this.setDocHeaderId(new BigDecimal(temp.getString("DOC_HEADER_ID")));
+        }
+        
+        local = new StringBuffer(temp.getString("CUSTOMER"));
+        if (local.indexOf("@nil") == -1) {
+            this.setCustomer(temp.getString("CUSTOMER"));
+        }
+        
+        local = new StringBuffer(temp.getString("DOCUMENT_NUMBER"));
+        if (local.indexOf("@nil") == -1) {
+            this.setDocumentNumber(temp.getString("DOCUMENT_NUMBER"));
+        }
+        
+        local = new StringBuffer(temp.getString("LOCATION"));
+        if (local.indexOf("@nil") == -1) {
+            this.setLocation(temp.getString("LOCATION"));
+        }
+        
+        local = new StringBuffer(temp.getString("ORDER_VALUE"));
+        if (local.indexOf("@nil") == -1) {
+            this.setOrderValue(new BigDecimal(temp.getString("ORDER_VALUE")));
+        }       
     }
 
     public void setDocHeaderId(BigDecimal docHeaderId) {

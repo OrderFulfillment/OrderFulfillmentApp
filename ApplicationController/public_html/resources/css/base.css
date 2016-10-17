@@ -64,6 +64,28 @@
     border: none !important;
 }
 
-#lv1:0:potl2{
-  margin-right: 0px; !important
+#lv1:0:potl2 {
+    margin-right: 0px;!important
+}
+
+.table-header1 {
+}
+
+.table-header2 {
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 34px;
+    background-color: #e6e6e6;
+    border-bottom-color: #86bc25;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+}
+
+.cell-header2 {
+    background-color: #9a9a9a;
+}
+
+.cell-header-dark {
+    background-color: #e6e6e6;
 }

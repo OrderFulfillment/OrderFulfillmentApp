@@ -28,7 +28,7 @@ public class PoHeadersService {
         case "On Hold":
             status = "H";
             break;
-        case "Back Ordered Count":
+        case "Back Ordered":
             status = "B";
             break;
         case "In Jeopardy":
@@ -69,7 +69,7 @@ public class PoHeadersService {
             PoHeaders headers = itr.next();
             tempList.add(headers);
         }
-        poHeadersArray = tempList.toArray(new PoHeaders[tempList.size()]);
+        poHeadersArray = tempList.toArray(new PoHeaders[0]);
         return poHeadersArray;
     }
 }
