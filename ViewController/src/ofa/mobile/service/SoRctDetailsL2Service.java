@@ -49,7 +49,7 @@ public class SoRctDetailsL2Service {
             }
             String soOrRct = AdfmfJavaUtilities.getELValue("#{pageFlowScope.soOrRct}").toString();
 
-            int minAging = 0, maxAging = 60;
+            int minAging = 0, maxAging = 200;
             String jsonArrayAsString =
                 serviceManager.invokeREAD(RestURIs.getSoRctDetailsL2URI(status, soOrRct, minAging, maxAging));
 

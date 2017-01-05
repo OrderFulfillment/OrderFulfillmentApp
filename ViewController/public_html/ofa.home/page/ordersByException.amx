@@ -52,7 +52,7 @@
                 </amx:facet>
                 <dvtm:legend rendered="false" id="l2"/>
                 <dvtm:yAxis id="ya3" title="Number of Orders" minimumIncrement="1" majorIncrement="5"/>
-                <dvtm:xAxis id="xa1" title="(Min: 0, Max: 45)"/>
+                <dvtm:xAxis id="xa1" title="(Min: 0, Max: 200)"/>
             </dvtm:barChart>
         </amx:panelGroupLayout>
     </amx:panelPage>

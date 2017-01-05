@@ -2,6 +2,11 @@
 <adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
   <task-flow-definition id="outboundShipmentTf">
     <default-activity>outboundShipment</default-activity>
+    <managed-bean id="__4">
+      <managed-bean-name>ResetDataBean</managed-bean-name>
+      <managed-bean-class>ofa.mobile.bean.ResetDataBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <view id="outboundShipment">
       <page>/ofa.outboundShipment/page/outboundShipment.amx</page>
     </view>

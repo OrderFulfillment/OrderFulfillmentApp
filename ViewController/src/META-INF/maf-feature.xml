@@ -4,35 +4,71 @@
     <adfmf:content id="ofa.home.1">
       <adfmf:amx file="ofa.home/homeTf.xml#homeTf"/>
     </adfmf:content>
+    <adfmf:properties id="p3">
+      <adfmf:property name="iOSWebView" value="legacy" id="p4"/>
+    </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="ofa.springboard" name="springboard">
     <adfmf:content id="ofa.springboard.1">
       <adfmf:amx file="ofa.springboard/springboardTf.xml#springboardTf"/>
     </adfmf:content>
+    <adfmf:properties id="p9">
+      <adfmf:property name="iOSWebView" value="legacy" id="p10"/>
+    </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="ofa.customer" name="customer">
     <adfmf:content id="ofa.customer.1">
       <adfmf:amx file="ofa.customer/customerTf.xml#customerTf"/>
     </adfmf:content>
+    <adfmf:properties id="p11">
+      <adfmf:property name="iOSWebView" value="legacy" id="p12"/>
+    </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="ofa.carrier" name="carrier">
     <adfmf:content id="ofa.carrier.1">
       <adfmf:amx file="ofa.carrier/carrierTf.xml#carrierTf"/>
     </adfmf:content>
+    <adfmf:properties id="p7">
+      <adfmf:property name="iOSWebView" value="legacy" id="p8"/>
+    </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="ofa.outboundShipment" name="outboundShipment">
     <adfmf:content id="ofa.outboundShipment.1">
       <adfmf:amx file="ofa.outboundShipment/outboundShipmentTf.xml#outboundShipmentTf"/>
     </adfmf:content>
+    <adfmf:properties id="p13">
+      <adfmf:property name="iOSWebView" value="legacy" id="p14"/>
+    </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="ofa.inboundShipment" name="inboundShipment">
     <adfmf:content id="ofa.inboundShipment.1">
       <adfmf:amx file="ofa.inboundShipment/inboundShipmentTf.xml#inboundShipmentTf"/>
     </adfmf:content>
+    <adfmf:properties id="p1">
+      <adfmf:property name="iOSWebView" value="legacy" id="p2"/>
+    </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="ofa.dailyProgressTracker" name="dailyProgressTracker">
     <adfmf:content id="ofa.dailyProgressTracker.1">
       <adfmf:amx file="ofa.dailyProgressTracker/progressTrackerTf.xml#progressTrackerTf"/>
+    </adfmf:content>
+    <adfmf:properties id="p5">
+      <adfmf:property name="iOSWebView" value="legacy" id="p6"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.settings" name="settings">
+    <adfmf:content id="ofa.settings.1">
+      <adfmf:amx file="ofa.settings/settingsTf.xml#settingsTf"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.aboutUs" name="aboutUs">
+    <adfmf:content id="ofa.aboutUs.1">
+      <adfmf:amx file="ofa.aboutUs/page/aboutUs.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="ofa.search" name="search">
+    <adfmf:content id="ofa.search.1">
+      <adfmf:amx file="ofa.search/page/search.amx"/>
     </adfmf:content>
   </adfmf:feature>
 </adfmf:features>

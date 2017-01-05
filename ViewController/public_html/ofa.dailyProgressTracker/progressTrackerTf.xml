@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
   <task-flow-definition id="progressTrackerTf">
+    <default-activity>progressTrackerHome</default-activity>
+    <view id="progressTrackerHome">
+      <page>/ofa.dailyProgressTracker/page/progressTrackerHome.amx</page>
+    </view>
+    <view id="progressTrackerHdr">
+      <page>/ofa.dailyProgressTracker/page/progressTrackerHdr.amx</page>
+    </view>
+    <view id="progressTrackerLines">
+      <page>/ofa.dailyProgressTracker/page/progressTrackerLines.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>progressTrackerHome</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>lines</from-outcome>
+        <to-activity-id>progressTrackerLines</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>headers</from-outcome>
+        <to-activity-id>progressTrackerHdr</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <page-flow-scope-behavior>
       <push-new/>
     </page-flow-scope-behavior>

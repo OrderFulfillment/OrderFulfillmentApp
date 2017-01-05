@@ -2,4 +2,71 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">progressTrackerHome</property>
+      <property
+         name="x">336.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>progressTrackerHome&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">207.19531</property>
+      <property
+         name="page">/ofa.dailyProgressTracker/page/progressTrackerHome.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">progressTrackerHdr</property>
+      <property
+         name="x">558.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>progressTrackerHdr&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">395.1953</property>
+      <property
+         name="page">/ofa.dailyProgressTracker/page/progressTrackerHdr.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">progressTrackerLines</property>
+      <property
+         name="x">241.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>progressTrackerLines&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">452.89648</property>
+      <property
+         name="page">/ofa.dailyProgressTracker/page/progressTrackerLines.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View4">
+      <property
+         name="fromOutcome">lines</property>
+      <property
+         name="sdm:polyPoints">B50,336.0,260.84473,241.0,398.5459,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">headers</property>
+      <property
+         name="sdm:polyPoints">B56,339.5,260.84473,517.0,394.84473,L50</property>
+   </ControlFlowCase>
 </SDM>

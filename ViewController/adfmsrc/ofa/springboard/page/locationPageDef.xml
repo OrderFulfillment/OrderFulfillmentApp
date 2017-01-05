@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.33" id="locationPageDef"
+                Package="ofa.springboard.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="LocationService" id="LocationServiceIterator"/>
+    <accessorIterator MasterBinding="LocationServiceIterator" Binds="location" RangeSize="25"
+                      DataControl="LocationService" BeanClass="ofa.mobile.pojo.Location" id="locationIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="locationIterator" id="location">
+      <nodeDefinition DefName="ofa.mobile.pojo.Location" Name="location0">
+        <AttrNames>
+          <Item Value="locationName"/>
+          <Item Value="locationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

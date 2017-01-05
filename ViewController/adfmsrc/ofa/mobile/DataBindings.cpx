@@ -26,6 +26,15 @@
     <page path="/ofa.outboundShipment/page/outboundShipment.amx" usageId="ofa_mobile_outboundShipmentPageDef"/>
     <page path="/ofa.outboundShipment/page/outboundShipmentDetails.amx"
           usageId="ofa_mobile_outboundShipmentDetailsPageDef"/>
+    <page path="/ofa.dailyProgressTracker/page/progressTrackerHome.amx"
+          usageId="ofa_mobile_progressTrackerHomePageDef"/>
+    <page path="/ofa.settings/page/settings.amx" usageId="ofa_mobile_settingsPageDef"/>
+    <page path="/ofa.springboard/page/location.amx" usageId="ofa_mobile_locationPageDef"/>
+    <page path="/ofa.springboard/page/warehouse.amx" usageId="ofa_mobile_warehousePageDef"/>
+    <page path="/ofa.dailyProgressTracker/page/progressTrackerHdr.amx" usageId="ofa_mobile_progressTrackerHdrPageDef"/>
+    <page path="/ofa.dailyProgressTracker/page/progressTrackerLines.amx"
+          usageId="ofa_mobile_progressTrackerLinesPageDef"/>
+    <page path="/ofa.search/page/search.amx" usageId="ofa_mobile_searchPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="ofa_mobile_homePGPageDef" path="ofa.home.page.homePGPageDef"/>
@@ -47,8 +56,21 @@
     <page id="ofa_mobile_outboundShipmentPageDef" path="ofa.outboundShipment.page.outboundShipmentPageDef"/>
     <page id="ofa_mobile_outboundShipmentDetailsPageDef"
           path="ofa.outboundShipment.page.outboundShipmentDetailsPageDef"/>
+    <page id="ofa_mobile_progressTrackerHomePageDef" path="ofa.dailyProgressTracker.page.progressTrackerHomePageDef"/>
+    <page id="ofa_mobile_settingsPageDef" path="ofa.settings.page.settingsPageDef"/>
+    <page id="ofa_mobile_locationPageDef" path="ofa.springboard.page.locationPageDef"/>
+    <page id="ofa_mobile_warehousePageDef" path="ofa.springboard.page.warehousePageDef"/>
+    <page id="ofa_mobile_progressTrackerHdrPageDef" path="ofa.dailyProgressTracker.page.progressTrackerHdrPageDef"/>
+    <page id="ofa_mobile_progressTrackerLinesPageDef" path="ofa.dailyProgressTracker.page.progressTrackerLinesPageDef"/>
+    <page id="ofa_mobile_searchPageDef" path="ofa.search.page.searchPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="ShipmentLineDetailService" path="ofa.mobile.ShipmentLineDetailService"/>
+    <dc id="ShipmentDetailService" path="ofa.mobile.ShipmentDetailService"/>
+    <dc id="WarehouseService" path="ofa.mobile.WarehouseService"/>
+    <dc id="LocationService" path="ofa.mobile.LocationService"/>
+    <dc id="SettingsPageService" path="ofa.mobile.SettingsPageService"/>
+    <dc id="ProgressTrackerService" path="ofa.mobile.ProgressTrackerService"/>
     <dc id="OutboundShipmentDetailService" path="ofa.mobile.OutboundShipmentDetailService"/>
     <dc id="OutboundShipmentService" path="ofa.mobile.OutboundShipmentService"/>
     <dc id="InboundShipmentDetailService" path="ofa.mobile.InboundShipmentDetailService"/>

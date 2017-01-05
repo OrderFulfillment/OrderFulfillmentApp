@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.20" id="progressTrackerHomePageDef"
+                Package="ofa.dailyProgressTracker.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ProgressTrackerService" id="ProgressTrackerServiceIterator"/>
+    <accessorIterator MasterBinding="ProgressTrackerServiceIterator" Binds="progressTracker" RangeSize="25"
+                      DataControl="ProgressTrackerService" BeanClass="ofa.mobile.pojo.ProgressTracker"
+                      id="progressTrackerIterator"/>
+    <accessorIterator MasterBinding="progressTrackerIterator" Binds="shipmentLines" RangeSize="-1"
+                      DataControl="ProgressTrackerService" BeanClass="ofa.mobile.pojo.ShipmentLine"
+                      id="shipmentLinesIterator"/>
+    <accessorIterator MasterBinding="progressTrackerIterator" Binds="shipments" RangeSize="-1"
+                      DataControl="ProgressTrackerService" BeanClass="ofa.mobile.pojo.Shipment" id="shipmentsIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="gotoSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="gotoSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <tree IterBinding="shipmentLinesIterator" id="shipmentLines" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="ofa.mobile.pojo.ShipmentLine" Name="shipmentLines">
+        <AttrNames>
+          <Item Value="lineCount"/>
+          <Item Value="lineStatus"/>
+          <Item Value="percentage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="shipmentsIterator" id="shipments" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="ofa.mobile.pojo.Shipment" Name="shipments">
+        <AttrNames>
+          <Item Value="count"/>
+          <Item Value="shipmentStatus"/>
+          <Item Value="percentage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

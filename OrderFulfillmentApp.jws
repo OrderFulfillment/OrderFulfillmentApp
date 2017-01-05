@@ -1,5 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jws:workspace xmlns:jws="http://xmlns.oracle.com/ide/project">
+   <hash n="adrs-workspace-properties">
+      <value n="adrs-instance-binding" v="DefaultServer"/>
+      <value n="deploy-timeout" v="0"/>
+      <value n="runtime-application-name" v="OrderFulfillmentApp"/>
+   </hash>
    <value n="application-package-prefix" v="ofa"/>
    <value n="appTemplateId" v="mafAppTemplate"/>
    <hash n="component-versions">

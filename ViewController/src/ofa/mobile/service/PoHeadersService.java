@@ -43,7 +43,7 @@ public class PoHeadersService {
         Integer partyId = Integer.parseInt(AdfmfJavaUtilities.getELValue("#{pageFlowScope.customerId}").toString());
         String ageorCount = AdfmfJavaUtilities.getELValue("#{pageFlowScope.ageOrCount}").toString();
         String jsonArrayAsString =
-            serviceManager.invokeREAD(RestURIs.getSoHeadersURI(status, partyId, soOrRct, ageorCount, 0, 45));
+            serviceManager.invokeREAD(RestURIs.getSoHeadersURI(status, partyId, soOrRct, ageorCount, 0, 200));
         try {
             JSONObject jsonObject = new JSONObject(jsonArrayAsString);
             JSONObject parentnode = jsonObject.getJSONObject("PX_HEADER_TYPE");

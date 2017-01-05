@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.33" id="progressTrackerLinesPageDef"
+                Package="ofa.dailyProgressTracker.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ShipmentLineDetailService"
+              id="ShipmentLineDetailServiceIterator"/>
+    <accessorIterator MasterBinding="ShipmentLineDetailServiceIterator" Binds="shipmentDetail" RangeSize="25"
+                      DataControl="ShipmentLineDetailService" BeanClass="ofa.mobile.pojo.ShipmentLineDetail"
+                      id="shipmentDetailIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="shipmentDetailIterator" id="shipmentDetail">
+      <nodeDefinition DefName="ofa.mobile.pojo.ShipmentLineDetail" Name="shipmentDetail0">
+        <AttrNames>
+          <Item Value="deliveryNumber"/>
+          <Item Value="itemNumber"/>
+          <Item Value="orderNumber"/>
+          <Item Value="requestedQuantity"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

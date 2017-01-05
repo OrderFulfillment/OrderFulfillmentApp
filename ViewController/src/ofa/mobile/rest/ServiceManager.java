@@ -2,9 +2,10 @@ package ofa.mobile.rest;
 
 import java.util.logging.Level;
 
-import oracle.adfmf.dc.ws.rest.RestServiceAdapter;
-import oracle.adfmf.framework.api.Model;
 import oracle.adfmf.util.logging.Trace;
+
+import oracle.maf.api.dc.ws.rest.RestServiceAdapter;
+import oracle.maf.api.dc.ws.rest.RestServiceAdapterFactory;
 
 public class ServiceManager {
     public ServiceManager() {
@@ -47,13 +48,13 @@ public class ServiceManager {
         System.out.println("Inside rest");
         String restPayload = "";
 
-        RestServiceAdapter restServiceAdapter = Model.createRestServiceAdapter();
+        RestServiceAdapter restServiceAdapter = RestServiceAdapterFactory.newFactory().createRestServiceAdapter();
         restServiceAdapter.clearRequestProperties();
         //bioConnection URL :http://ussltcsnl3432.solutions.glbsnet.com:7004/
         restServiceAdapter.setConnectionName("snet");
 
         //set GET, POST, DELETE, PUT
-        restServiceAdapter.setRequestType(httpMethod);
+        restServiceAdapter.setRequestMethod(httpMethod);
         restServiceAdapter.addRequestProperty("Authorization", "None ");
         restServiceAdapter.addRequestProperty("Content-Language", "en-US");
         restServiceAdapter.addRequestProperty("Content-Type", "application/json");

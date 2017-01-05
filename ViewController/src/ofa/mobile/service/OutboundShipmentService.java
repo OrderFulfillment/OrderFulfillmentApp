@@ -8,10 +8,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
 import java.util.Locale;
 
-import ofa.mobile.pojo.OutboundShipment;
 import ofa.mobile.pojo.OutboundShipment;
 import ofa.mobile.rest.RestURIs;
 import ofa.mobile.rest.ServiceManager;
@@ -35,7 +33,7 @@ public class OutboundShipmentService {
 
         try {
             datefromUser = AdfmfJavaUtilities.getELValue("#{pageFlowScope.outboundDate}").toString();
-            DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
+            DateFormat originalFormat = new SimpleDateFormat("dd MMM yyyy", Locale.US);
             DateFormat targetFormat = new SimpleDateFormat("dd-MMM-yyyy");
             Date date = originalFormat.parse(datefromUser);
             formattedDate = targetFormat.format(date);

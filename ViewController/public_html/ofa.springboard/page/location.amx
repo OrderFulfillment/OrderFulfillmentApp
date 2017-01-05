@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+                <amx:outputText value="Location" id="ot1" inlineStyle="color:White;width: 290px;text-align: center;"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink id="cl3" shortDesc="Settings" action="__back">
+                <amx:outputHtml id="oh1" styleClass="fa fa-chevron-left fa-lg" inlineStyle="color:white;"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:panelStretchLayout id="psl1">
+            <amx:facet name="top"/>
+            <amx:facet name="center">
+                <amx:listView var="row" value="#{bindings.location.collectionModel}"
+                              fetchSize="#{bindings.location.rangeSize}"
+                              selectedRowKeys="#{bindings.location.collectionModel.selectedRow}"
+                              initialScrollRowKeys="#{bindings.location.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.location.collectionModel.makeCurrent}"
+                              showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1" layout="cards">
+                    <amx:listItem id="li1" action="toWarehouse">
+                        <amx:outputText value="#{row.locationName}" id="ot2"/>
+                        <amx:setPropertyListener id="spl1" to="#{applicationScope.locationId}"
+                                                 from="#{row.locationId}"/>
+                        <amx:setPropertyListener id="spl2" to="#{pageFlowScope.backFrom}" from=" "/>
+                    </amx:listItem>
+                </amx:listView>
+            </amx:facet>
+        </amx:panelStretchLayout>
+    </amx:panelPage>
+</amx:view>

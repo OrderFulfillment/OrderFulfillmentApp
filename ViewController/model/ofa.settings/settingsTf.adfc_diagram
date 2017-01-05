@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">settings</property>
+      <property
+         name="x">169.5</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>settings&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">314.6953</property>
+      <property
+         name="page">/ofa.settings/page/settings.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">location</property>
+      <property
+         name="x">380.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>location&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">283.29883</property>
+      <property
+         name="page">/ofa.springboard/page/location.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">warehouse</property>
+      <property
+         name="x">560.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>warehouse&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">280.29883</property>
+      <property
+         name="page">/ofa.springboard/page/warehouse.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">toLocation</property>
+      <property
+         name="sdm:polyPoints">R50,210.5,314.34473,339.0,282.94824,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View3"
+      to="View4">
+      <property
+         name="fromOutcome">toWarehouse</property>
+      <property
+         name="sdm:polyPoints">R50,421.0,282.94824,519.0,279.94824,L50</property>
+   </ControlFlowCase>
+</SDM>

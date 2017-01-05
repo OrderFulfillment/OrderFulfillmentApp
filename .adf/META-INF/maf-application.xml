@@ -9,6 +9,9 @@
   <adfmf:featureReference refId="ofa.outboundShipment" id="fr5"/>
   <adfmf:featureReference refId="ofa.inboundShipment" id="fr6"/>
   <adfmf:featureReference refId="ofa.dailyProgressTracker" id="fr7"/>
+  <adfmf:featureReference refId="ofa.settings" id="fr8"/>
+  <adfmf:featureReference refId="ofa.aboutUs" id="fr9"/>
+  <adfmf:featureReference refId="ofa.search" id="fr10"/>
   <adfmf:navigation>
     <adfmf:navigationBar enabled="false"/>
     <adfmf:springboard enabled="true" showSpringboardAtStartup="false" displayGotoSpringboardControl="false"

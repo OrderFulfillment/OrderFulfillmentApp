@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.33" id="warehousePageDef"
+                Package="ofa.springboard.page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="WarehouseService" id="WarehouseServiceIterator"/>
+    <accessorIterator MasterBinding="WarehouseServiceIterator" Binds="warehouse" RangeSize="25"
+                      DataControl="WarehouseService" BeanClass="ofa.mobile.pojo.Warehouse" id="warehouseIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="warehouseIterator" id="warehouse">
+      <nodeDefinition DefName="ofa.mobile.pojo.Warehouse" Name="warehouse0">
+        <AttrNames>
+          <Item Value="warehouse"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

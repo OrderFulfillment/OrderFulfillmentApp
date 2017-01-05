@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+        <amx:outputText value="Track Daily Progress" id="ot1"
+                        inlineStyle="color:White;width: 290px;text-align: center;"/>
+      </amx:panelGroupLayout>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandLink actionListener="#{bindings.gotoSpringboard.execute}"
+                       disabled="#{!bindings.gotoSpringboard.enabled}" id="cl3">
+        <amx:outputHtml id="oh1" styleClass="fa fa-bars fa-lg" inlineStyle="color:white;"/>
+      </amx:commandLink>
+    </amx:facet>
+    <amx:panelStretchLayout id="psl1">
+      <amx:facet name="top"/>
+      <amx:facet name="center">
+        <dvtm:pieChart selectionListener="#{bindings.shipments.collectionModel.makeCurrent}" dataSelection="single"
+                       selectedRowKeys="#{bindings.shipments.collectionModel.selectedRow}" id="pieChart1" var="row"
+                       value="#{bindings.shipments.collectionModel}" innerRadius="0.2" title="Shipments"
+                       titleHalign="center">
+          <dvtm:legend id="l1"/>
+          <amx:facet name="dataStamp">
+            <dvtm:pieDataItem id="di1" label="#{row.shipmentStatus}" value="#{row.count}" action="headers">
+              <amx:setPropertyListener id="spl1" to="#{pageFlowScope.shipmentStatus}" from="#{row.shipmentStatus}"/>
+            </dvtm:pieDataItem>
+          </amx:facet>
+        </dvtm:pieChart>
+        <dvtm:pieChart selectionListener="#{bindings.shipmentLines.collectionModel.makeCurrent}" dataSelection="single"
+                       selectedRowKeys="#{bindings.shipmentLines.collectionModel.selectedRow}" id="pieChart2" var="row"
+                       value="#{bindings.shipmentLines.collectionModel}" innerRadius="0.2" selectionEffect="explode"
+                       seriesEffect="gradient" title="Shipment Lines" titleHalign="center">
+          <dvtm:legend id="l2"/>
+          <amx:facet name="dataStamp">
+            <dvtm:pieDataItem id="di2" label="#{row.lineStatus}" value="#{row.lineCount}" action="lines"/>
+          </amx:facet>
+        </dvtm:pieChart>
+      </amx:facet>
+      <amx:facet name="bottom"/>
+    </amx:panelStretchLayout>
+  </amx:panelPage>
+</amx:view>

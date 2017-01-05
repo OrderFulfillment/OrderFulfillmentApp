@@ -20,9 +20,10 @@
                     <amx:rowLayout id="rl1">
                         <amx:cellFormat id="cf1" height="40px" styleClass="cell-header-light"
                                         inlineStyle="padding-left:6px;">
-                            <amx:inputDate label="Due On" id="id1" inputType="date"
-                                           value="#{pageFlowScope.outboundDate}"
-                                           inlineStyle="font-size:large;"/>
+                            <amx:selectOneChoice label="Week Ending" id="soc1" value="#{pageFlowScope.outboundDate}">
+                                <amx:selectItem id="si1"/>
+                                <amx:selectItems id="si2" value="#{pageFlowScope.ResetDataBean.weakEnding}"/>
+                            </amx:selectOneChoice>
                         </amx:cellFormat>
                         <amx:cellFormat id="cf6" height="40px" styleClass="cell-header-light" width="68px"
                                         inlineStyle="padding-right:10px;">

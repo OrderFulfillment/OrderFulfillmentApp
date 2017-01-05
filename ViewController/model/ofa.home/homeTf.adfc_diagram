@@ -22,7 +22,7 @@
       <property
          name="y">-23.279724</property>
       <property
-         name="page">/ofa.home.page/homePG.amx</property>
+         name="page">/ofa.home/page/homePG.amx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -37,7 +37,7 @@
       <property
          name="y">-23.839111</property>
       <property
-         name="page">/ofa.home.page/ordersByException.amx</property>
+         name="page">/ofa.home/page/ordersByException.amx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -52,7 +52,7 @@
       <property
          name="y">-23.929108</property>
       <property
-         name="page">/ofa.home.page/receiptsByException.amx</property>
+         name="page">/ofa.home/page/receiptsByException.amx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -67,7 +67,7 @@
       <property
          name="y">84.64688</property>
       <property
-         name="page">/ofa.home.page/purchaseOrders.amx</property>
+         name="page">/ofa.home/page/purchaseOrders.amx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -82,7 +82,7 @@
       <property
          name="y">72.72412</property>
       <property
-         name="page">/ofa.home.page/salesOrders.amx</property>
+         name="page">/ofa.home/page/salesOrders.amx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -97,7 +97,7 @@
       <property
          name="y">240.09766</property>
       <property
-         name="page">/ofa.home.page/purchaseOrdersLines.amx</property>
+         name="page">/ofa.home/page/purchaseOrdersLines.amx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -112,7 +112,7 @@
       <property
          name="y">241.72412</property>
       <property
-         name="page">/ofa.home.page/salesOrdersLines.amx</property>
+         name="page">/ofa.home/page/salesOrdersLines.amx</property>
       <property
          name="exceptionHandler">false</property>
    </View>

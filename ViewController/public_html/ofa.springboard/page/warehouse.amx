@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+                <amx:outputText value="Warehouse" id="ot1" inlineStyle="color:White;width: 290px;text-align: center;"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink id="cl3" shortDesc="Location" action="__back">
+                <amx:outputHtml id="oh1" styleClass="fa fa-chevron-left fa-lg" inlineStyle="color:white;"/>
+                <amx:setPropertyListener id="spl2" from="backFromWarehouse" to="#{pageFlowScope.backFrom}"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:panelStretchLayout id="psl1">
+            <amx:facet name="top"/>
+            <amx:facet name="center">
+                <amx:listView var="row" value="#{bindings.warehouse.collectionModel}"
+                              fetchSize="#{bindings.warehouse.rangeSize}"
+                              selectedRowKeys="#{bindings.warehouse.collectionModel.selectedRow}"
+                              initialScrollRowKeys="#{bindings.warehouse.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.warehouse.collectionModel.makeCurrent}"
+                              showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1" layout="cards">
+                    <amx:listItem id="li1" action="__back">
+                        <amx:outputText value="#{row.warehouse}" id="ot2"/>
+                        <amx:setPropertyListener id="spl1" from="M1" to="#{applicationScope.ResetDataBean.warehouse}"/>
+                    </amx:listItem>
+                </amx:listView>
+            </amx:facet>
+        </amx:panelStretchLayout>
+    </amx:panelPage>
+</amx:view>

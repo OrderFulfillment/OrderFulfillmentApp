@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+                <amx:outputText value="Settings" id="ot1" inlineStyle="color:White;width: 290px;text-align: center;"/>
+            </amx:panelGroupLayout>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandLink actionListener="#{bindings.gotoSpringboard.execute}"
+                             disabled="#{!bindings.gotoSpringboard.enabled}" id="cl3" shortDesc="Go to springboard">
+                <amx:outputHtml id="oh1" styleClass="fa fa-bars fa-lg" inlineStyle="color:white;"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:listView var="row" showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
+            <amx:listItem id="li1" action="toLocation">
+                <amx:tableLayout width="100%" id="tl1">
+                    <amx:rowLayout id="rl1">
+                        <amx:cellFormat width="40px" halign="center" id="cf1">
+                            <amx:outputHtml id="oh2" styleClass="fa  fa-building-o fa-lg"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat width="60%" height="43px" id="cf2">
+                            <amx:outputText value="Location" id="ot2"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf3" halign="end">
+                            <amx:outputText value="#{applicationScope.warehouse}" id="ot3" inlineStyle="color:Gray;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+        </amx:listView>
+    </amx:panelPage>
+</amx:view>

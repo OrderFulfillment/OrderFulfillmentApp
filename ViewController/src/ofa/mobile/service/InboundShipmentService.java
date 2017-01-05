@@ -35,7 +35,7 @@ public class InboundShipmentService {
 
         try {
             datefromUser = AdfmfJavaUtilities.getELValue("#{pageFlowScope.inboundDate}").toString();
-            DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
+            DateFormat originalFormat = new SimpleDateFormat("dd MMM yyyy", Locale.US);
             DateFormat targetFormat = new SimpleDateFormat("dd-MMM-yyyy");
             Date date = originalFormat.parse(datefromUser);
             formattedDate = targetFormat.format(date);
